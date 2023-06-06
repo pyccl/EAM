@@ -1,0 +1,21 @@
+a  {         font:normal 14px ËÎÌו; color:#000000; text-decoration:none;}
+a:hover{        color: #799AE1}
+body{FONT-SIZE: 14px;COLOR: #000000; background-color: #FFFFFF;SCROLLBAR-FACE-COLOR: #4685CA; SCROLLBAR-HIGHLIGHT-COLOR: #E1DEDB; SCROLLBAR-SHADOW-COLOR: #E1DEDB; SCROLLBAR-3DLIGHT-COLOR: #E1DEDB; SCROLLBAR-ARROW-COLOR: #ffffff; SCROLLBAR-TRACK-COLOR: #F2F2F2; SCROLLBAR-DARKSHADOW-COLOR: #F2F2F2}
+TD{        font-size: 12px; line-height: 15px;}
+submit{        border: 1px dashed; background-color: #799AE1; border-color: #FFFFFF black black #FFFFFF; height: 20px}
+form{       color: #000000; border: 1px #000000 solid; FONT-FAMILY: "ËÎÌו"; background-color: #799AE1}
+.form{       border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px}
+li{        line-height: 180%}
+.classtop{background-image:url(images/default_19.gif);color: #FFFFFF; font-weight: bold; font-size: 14px;}
+.classtop1{background-image:url(images/default_19.gif);color: #FFFFFF;}
+.classtd{background-color:#E8F1FF;border-bottom:solid 1px #f5f3f3;border-right:solid 1px #f5f3f3;}
+.classtd1{background-color:#FF0000;border-bottom:solid 1px #f5f3f3;border-right:solid 1px #f5f3f3;}
+A.menu:link {color: #006599; text-decoration: none;font-family: Arial, helvetica, sans-serif; font-size: 10px;}
+A.menu:visited {color: #006599; text-decoration: none;font-family: Arial, helvetica, sans-serif; font-size: 10px;}
+A.menu:active {color: #006599; text-decoration: none;font-family: Arial, helvetica, sans-serif; font-size: 10px;}
+A.menu:hover {color: #E00000; text-decoration: underline;font-family: Arial, helvetica, sans-serif; font-size: 10px;}
+.classfooter{background-color:#4685CA;color: #FFFFFF;}
+.button {font-size: 10pt;color: #000000;background-color: #eeeeee;cursor: hand;padding: 2px;height: 20px;border-top: 1px solid #5C85D6;border-right: 1px solid #5C85D6;border-bottom: 1px solid #5C85D6;border-left: 5px solid #5C85D6;}
+.form{      border: 1px solid #006699; height:20px;}
+.font{font-size: 14px;}
+select{font-size: 14px;}

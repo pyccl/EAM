@@ -1,0 +1,1 @@
+<center><img src="../images/note.gif" align="absmiddle">&nbsp;<font color="#FF0000">你不具备此权限或者参数错误，请与管理员联系！</font></center>

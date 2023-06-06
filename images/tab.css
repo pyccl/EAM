@@ -1,0 +1,11 @@
+body{margin:0px; padding:0px; font-size:18px; background:#e5e5e5;}
+.th_top{ line-height:26px; background:url(default_26.gif); border-bottom:solid 1px #c0c0c0; padding-left:30px; border-right:solid 1px #b3b3b3;}
+.th_top_last{ line-height:26px; background:url(default_26.gif); border-bottom:solid 1px #c0c0c0;padding-left:30px;}
+.td1{ line-height:23px; border-bottom:solid 1px #f5f3f3; background:#e5e5e5; padding-left:10px;}
+.td2{ line-height:23px; border-bottom:solid 1px #f5f3f3; background:#dddddd; padding-left:10px;}
+.td3{ line-height:23px; border-bottom:solid 1px #f5f3f3; background:#e5e5e5; padding-left:10px; border-left:solid 1px #fff}
+.td4{ line-height:23px; border-bottom:solid 1px #f5f3f3; background:#dddddd; padding-left:10px; border-left:solid 1px #fff}
+.input_style{width:45px; height:22px; background:url(default_26.gif); border: solid 1px #aea9a9; font-size:12px;}
+.indexbg{padding-top:50px;}
+tr.botbg {background:url(botbg.gif);width:100%;}
+td,div,input,select,textarea,body {font-size:12px;}
