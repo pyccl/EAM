@@ -34,7 +34,11 @@ else %>
     </tr>
     <%set rs=server.CreateObject("adodb.recordset")
 	if Instr(session("juese"),"|306,")<>0 then
-		sql="select * from admin order by id"
+	  	if session("uid") = 1 then
+			sql="select * from admin order by id"
+	  	else
+	  		sql="select * from admin where id <> 1 order by id"
+	  	end if
 	else
 		sql="select * from admin where rank='"&session("rank")&"' and id=" &session("uid")
 	end if
@@ -89,7 +93,7 @@ rs.AbsolutePage=pagecount
       <td><div align="center">
           <input class=button type="button" value="修改" onClick="javascript:window.location.href='xg_user.asp?id=<%=rs("id")%>&qx=<%=rs("id")%>'"/>
           &nbsp;
-       <%if Instr(session("juese"),"|306,")<>0 and rs("id")<>session("uid") then%>
+       <%if Instr(session("juese"),"|306,")<>0 and rs("id")<>session("uid") and rs("id")<>1 then%>
           	<input name="Submit2" type="button" class="button" onClick="{if(confirm('确认删除么?')){location.href='del_user.asp?id=<%=rs("id")%>';}return false;}" value="删除" />
 		<%end if%>
       </div></td>

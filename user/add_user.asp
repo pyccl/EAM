@@ -82,20 +82,22 @@ return false;
 </tr>
 <tr>
   <td height=24 class="classtd"><div align="right"><font color="#ff0033">*</font><strong>角&nbsp;色：</strong></div></td>
-  <td height=24 class="classtd"><select name="juese" class="form" id="juese" style="width: 180px;">
-    <%set rs=conn.execute("select id,mingcheng from juese")
-    	if not rs.eof then
-    		do while not rs.eof 
-    %>
-    			<option value="<%=Trim(rs("id"))%>"><%=rs("mingcheng")%></option>
-    		<%rs.movenext
-            loop
-		else
-			response.write "<font color=red>暂无角色，请" & "<a href=" & "admin_juese.asp?Result=Add" & ">添加角色</a>" & "后重试！</font>"
-        end if 
-        rs.close:set rs=nothing
-  %>
-  </select></td>
+  <td height=24 class="classtd">
+		  <select name="juese" class="form" id="juese" style="width: 180px;">
+		<%set rs=conn.execute("select id,mingcheng from juese")
+			if not rs.eof then
+				do while not rs.eof 
+		%>
+					<option value="<%=Trim(rs("id"))%>"><%=rs("mingcheng")%></option>
+				<%rs.movenext
+				loop
+			else
+				response.write "<font color=red>暂无角色，请" & "<a href=" & "admin_juese.asp?Result=Add" & ">添加角色</a>" & "后重试！</font>"
+			end if 
+			rs.close:set rs=nothing
+	  %>
+	  </select>
+		</td>
 </tr>
 <tr>
   <td height=24 class="classtd"><div align="right"><strong>状&nbsp;态：</strong></div></td>

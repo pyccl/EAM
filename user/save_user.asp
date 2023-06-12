@@ -8,7 +8,7 @@
 id=Cint(request("id"))
 action=request("action")
 if action="add" then
-    sql1="select * from admin where admin_id='"+  SQLInject(request("userid")) +"'"
+    sql1="select * from admin where id='"+ id +"'"
     rs.open sql1,connstr,1,3
     if not rs.eof then
           response.write ("<script>alert('该账号已经存在！请重新输入！');window.location.replace('add_user.asp');</script>")
@@ -60,7 +60,9 @@ end if
             rs("amwork")=0
             rs("admin_name")=trim(request("name"))            '姓名
             rs("rank")=Request.Form("y_name")                 '权限
-   			rs("juese")=Request.Form("juese") 				  '角色
+   			if id <> 1 then
+   				rs("juese")=Request.Form("juese") 			  '角色
+			end if
             response.write ("<script>alert('用户修改成功！');location.href='user_info.asp';</script>")
             rs.update
             response.end

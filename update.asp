@@ -219,6 +219,11 @@
         <td align="center" valign="middle" class="td1"><font color="Green">更新</font></td>
         <td class="td1">②更新JsColor插件为2.5.1。</td>
       </tr>
+      <tr>
+        <td align="center" class="td1">2023-6-12</td>
+        <td align="center" valign="middle" class="td1"><font color="Red">修复</font></td>
+        <td class="td1">修复普通用户修改密码时候，只有填写旧密码，不能填写新密码的BUG。</td>
+      </tr>
 </table>
 
 </body>
