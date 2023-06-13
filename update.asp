@@ -224,6 +224,11 @@
         <td align="center" valign="middle" class="td1"><font color="Red">修复</font></td>
         <td class="td1">修复普通用户修改密码时候，只有填写旧密码，不能填写新密码的BUG。</td>
       </tr>
+      <tr>
+        <td align="center" class="td1">2023-6-13</td>
+        <td align="center" valign="middle" class="td1"><font color="Red">修复</font></td>
+        <td class="td1">修复添加账户时，总提示&ldquo;已经存在&rdquo;的错误提示BUG。</td>
+      </tr>
 </table>
 
 </body>
