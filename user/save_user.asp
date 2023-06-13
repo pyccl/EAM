@@ -64,7 +64,7 @@ end if
    				rs("juese")=Request.Form("juese") 			  '角色
 			end if
             response.write ("<script>alert('用户修改成功！');location.href='user_info.asp';</script>")
-            'rs.update
+            rs.update
             response.end
         else                                                '若不是超级管理员
             if newpwd=newpwd2 then                          '判断两次输入密码是否一致
@@ -81,7 +81,7 @@ end if
                     else
                         rs("admin_pw")=md5(newpwd)              '修改密码
                         rs("admin_name")=trim(request("name"))  '修改姓名
-                        'rs.update                               '添加到数据库
+                        rs.update                               '添加到数据库
                         session("web_admin")=""
                         response.write "<script language=javascript>alert('密码修改成功!');location='user_info.asp'</script>"
                         response.end
