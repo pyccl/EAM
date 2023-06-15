@@ -42,11 +42,11 @@ end select
 <body>
 <table border="0" cellspacing="1" cellpadding="0" height="0" align=center width="100%" bgcolor="#183789">
   <tr>
-    <td height=25  align=left colspan=5 class=classtop1><img src="../images/table.gif" width="16" height="14"><img src="../images/jt.gif" width="5" height="6">&nbsp;<strong>角色管理</strong> <a href="admin_juese.asp?Result=Add"><img src="../images/add.png"></a></td>
+    <td height="25" align="left" class="classtop1"><img src="../images/table.gif" width="16" height="14"><img src="../images/jt.gif" width="5" height="6">&nbsp;<strong>角色管理</strong> <a href="admin_juese.asp?Result=Add"><img src="../images/add.png"></a></td>
   </tr>
 </table>
 <table border="0" cellspacing="1" cellpadding="4" bgcolor="#6298E1" align="center" width="100%" style="table-layout:fixed;">
-  <tr class=classtop1>
+  <tr class="classtop1">
     <td nowrap background="../images/th_bg.gif" width="3%"  height="15" align="center"><strong>ID</strong></td>
     <td nowrap background="../images/th_bg.gif" width="10%"  height="15" align="center"><strong>角色名称</strong></td>
     <td nowrap background="../images/th_bg.gif" width="52%"  height="15" align="center"><strong>具体权限</strong></td>
@@ -113,8 +113,8 @@ Else
 	%>
   </form>
   <form action="juese.asp" method="post">
-    <tr class=botbg>
-      <td height="25" align="center" colspan=6><div align="center"> 共有<strong><%=rs.recordcount%></strong>个角色, 页次: <strong><font color=red><%=pagecount%></font>/<%=rs.pagecount%></strong>,当前从第
+    <tr class="botbg">
+      <td height="25" align="center" colspan="6"><div align="center"> 共有<strong><%=rs.recordcount%></strong>个角色, 页次: <strong><font color="red"><%=pagecount%></font>/<%=rs.pagecount%></strong>,当前从第
           <%
 			   if pagecount<=1 then
 			   response.write "<font color=red>1</font>"
@@ -149,8 +149,11 @@ Else
         </div></td>
     </tr>
   </form>
-  <%
-		End If 
+  <%End If%>
+        <tr class="classfooter">
+          <td colspan="6"><div>当前执行SQL语句：<font color="red"><%response.write sql%></font></div></td>
+        </tr>
+	  <% 
 		rs.close
 		set rs=Nothing
 		%>

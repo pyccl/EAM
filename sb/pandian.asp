@@ -17,7 +17,7 @@ else
 	%><table border="0" cellspacing="1" cellpadding="0" height="0" align=center width="100%" bgcolor="#183789">
 	<td><table border="0" cellspacing="1" cellpadding="4" bgcolor="#FFFFFF" align="center" width="100%">
 			<tr>
-			  <td height=25  align=left colspan=5 class=classtop1><img src="../images/table.gif" width="16" height="14"><img src="../images/jt.gif" width="5" height="6">&nbsp;<b>管理资产</b> <a href="dj.asp"><img src="../images/add.png"></a></td>
+			  <td height="25" align="left" colspan="3" class="classtop1"><img src="../images/table.gif" width="16" height="14"><img src="../images/jt.gif" width="5" height="6">&nbsp;<b>管理资产</b> <a href="dj.asp"><img src="../images/add.png"></a></td>
 			</tr>
 			<form name=form2 method=post action=pandian.asp>
 			  <tr>
@@ -46,9 +46,9 @@ else
 					<input type="button" class=button  size=3 value='盘盈' name=ifive onClick="window.location.href='excel_cx.asp?ly=1&synx=2';" >
 					<input type="button" class=button  size=3 value='盘亏' name=ifive onClick="window.location.href='excel_cx.asp?ly=1&synx=3';" >
 				</td>
-				<td colspan="4" class="classtd" >分类：
+				<td class="classtd">分类：
 				  
-				  <select name=s_name1>
+				  <select name="s_name1">
 				    <option value="all">全部分类</option>
 				    <%
 				set rs=conn.execute("select * from [admin_sort] order by s_paixu desc")
@@ -233,7 +233,7 @@ else
 			</form>
 			<form action="pandian.asp?<%=fyorder%>&<%=gourl%>" method="post">
 			  <tr class=botbg>
-				<td height="25" align="center" colspan=15><div align="center"> 共有数据 <b><%=rs.recordcount%></b> 条, 页次: <b><font color=red><%=pagecount%></font>/<%=rs.pagecount%></b>, 
+				<td height="25" align="center" colspan="11"><div align="center"> 共有数据 <b><%=rs.recordcount%></b> 条, 页次: <b><font color=red><%=pagecount%></font>/<%=rs.pagecount%></b>, 
 					当前从第
 					<%
 			   if pagecount<=1 then
@@ -270,17 +270,17 @@ else
 				  </div>
 				</td>
 			</form>
-			<%
-	End If 
+			<%End If%>
+        <tr class="classfooter">
+          <td colspan="11"><div>当前执行SQL语句：<font color="red"><%response.write sql%></font></div></td>
+        </tr>
+	<%
 	rs.close
 	set rs=Nothing
 	%>
 		  </table></td>
 	  </tr>
 	</table>
-	<table border="0" cellspacing="1" cellpadding="4" bgcolor="#FFFFFF" align="center" width="100%">
-		<tr class="classfooter"><td colspan=15><div>当前执行SQL语句：<font color="red">
-		<%response.write sql%></font></div></td></tr></table>
 	<% else 
 		response.write ("<script>alert('未开启盘点，请与管理员联系！');</script>")
 		response.write "<br><center><img src=../images/note.gif align=absmiddle>&nbsp;<font color=red>未开启盘点，请与管理员联系！</font></center>"

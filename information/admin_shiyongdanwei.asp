@@ -61,10 +61,10 @@ end select
 <table border="0" cellspacing="1" cellpadding="4" bgcolor="#FFFFFF" align="center" width="100%">
   <form name=form2 method=post action=admin_shiyongdanwei.asp>
     <tr>
-      <td class=classtop1 colspan="15" align=center><B><%=session("companyname")%>公司管理</b></td>
+      <td class=classtop1 align="center"><strong><%=session("companyname")%>公司管理</strong></td>
     </tr>
     <tr>
-      <td class="classtd" colspan="15" align=right>查找公司名称：
+      <td class="classtd" align="right">查找公司名称：
         <input name="gjc" size="25" class=form>
         &nbsp;&nbsp;
 <input type=submit name=tiaojian value=" 查 询 " class=button></td>
@@ -146,7 +146,7 @@ loop
 %>
   <form action="admin_shiyongdanwei.asp?gjc=<%=gjc%>" method="post">
     <tr class=botbg>
-      <td height="25" align="center" colspan=5><div align="center"> 共有 <b><%=rs.recordcount%></b> 条记录, 页次: <b><font color=red><%=pagecount%></font>/<%=rs.pagecount%></b>, 
+      <td height="25" align="center" colspan="5"><div align="center"> 共有 <b><%=rs.recordcount%></b> 条记录, 页次: <b><font color=red><%=pagecount%></font>/<%=rs.pagecount%></b>, 
           当前从第
           <%
            if pagecount<=1 then
@@ -186,6 +186,9 @@ End If
 rs.close
 set rs=Nothing
 %>
+  <tr class=classtop1>
+    <td height="15" colspan="5" class="classtop1">颜色：用于在统计中显示；排序：数值越小越靠上。</td>
+  </tr>
 </table>
 <%end if
 end if%>

@@ -53,7 +53,7 @@ end select
 %>
 <table border="0" cellspacing="1" cellpadding="4" bgcolor="#6298E1" align="center" width="100%">
   <tr>
-    <td align=center colspan=17 class=classtop><B>部门管理</b>
+    <td align="center" colspan="4" class="classtop"><B>部门管理</b>
       <select name=company id="company"  onChange="var jmpURL=this.options[this.selectedIndex].value ; if(jmpURL!='') {window.location=jmpURL;} else {this.selectedIndex=0 ;}" >
         <option value="">请选择公司</option>
         <%
@@ -90,12 +90,12 @@ i=rs.recordcount%>
     <td nowrap background="../images/th_bg.gif" height="15" align="center"><strong>操作</strong></td>
   </tr>
   <tr>
-    <td colspan=4 class="classtd">当前公司：<font color=red><%=company1%></font></td>
+    <td colspan="4" class="classtd">当前公司：<font color=red><%=company1%></font></td>
   </tr>
   <%if rs.eof and rs.bof then
 response.write ""
 else
-        do while not rs.eof%>
+	do while not rs.eof%>
   <tr>
     <form name="form1" method="post" action="admin_department.asp?action=edit&s_id=<%=rs("s_id")%>">
       <td class="classtd"><div align="center">

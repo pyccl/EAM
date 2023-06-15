@@ -31,7 +31,7 @@ else%>
 <body>
 <table width="100%" border="0" cellspacing="1" cellpadding="4" bgcolor="#6298E1">
   <tr>
-    <th height=24 colspan=8><strong>操作日志</strong>
+    <th height="24" colspan="7"><strong>操作日志</strong>
       <select name="anclassid" onChange="var jmpURL=this.options[this.selectedIndex].value ; if(jmpURL!='') {window.location=jmpURL;} else {this.selectedIndex=0 ;}" >
         <option selected>--快速跳转--</option>
         <option value="?logtype=all">所有记录</option>
@@ -98,7 +98,7 @@ Else
       <td><div align="center"><%=rs("aip")%></div></td>
       <%if Instr(session("juese"),"|304,")<>0 then%>
       <td><div align="center">
-          <input name='selectID' type='checkbox' value='<%=rs("ID")%>' style='HEIGHT: 13px;WIDTH: 13px;'>
+          <input name="selectID" type="checkbox" value='<%=rs("ID")%>' style='HEIGHT: 13px;WIDTH: 13px;'>
         </div></td>
       <%end if%>
     </tr>
@@ -113,14 +113,14 @@ Else
 	loop
 end if
     if Instr(session("juese"),"|304,")<>0 and not(rs.eof and rs.bof) then%>
-    <tr>
-      <td colspan=8 align='right' height=30 class="forumrow"><input name='submitDelSelect' type='submit' class='button' id='submitDelSelect' value='删除所选'></td>
+    <tr bgcolor="#EBF2F9">
+      <td colspan="7" align="right" height="30" class="forumrow"><input name="submitDelSelect" type="submit" class="button" id="submitDelSelect" value="删除所选"></td>
     </tr>
   </form>
   <%end if %>
   <form action="user_log.asp?logtype=<%=logtype%>" method="post">
     <tr class="botbg">
-      <td height="25" align="center" colspan=8><div align="center"> 共有 <b><%=rs.recordcount%></b> 条记录, 页次: <b><font color=red><%=pagecount%></font>/<%=rs.pagecount%></b> , 当前从第
+      <td height="25" align="center" colspan="7"><div align="center"> 共有 <b><%=rs.recordcount%></b> 条记录, 页次: <b><font color=red><%=pagecount%></font>/<%=rs.pagecount%></b> , 当前从第
           <%if pagecount<=1 then
 				response.write "<font color=red>1</font>"
 			else
@@ -153,19 +153,14 @@ end if
 		<%end if%>
         </div></td>
     </tr>
-
   </form>
+        <tr class="classfooter">
+          <td colspan="7"><div>当前执行SQL语句：<font color="red"><%response.write sql%></font></div></td>
+        </tr>
   <% 
 rs.close
 set rs=Nothing
 %>
-</table>
-<table border="0" cellspacing="1" cellpadding="4" align="center" width="100%" class="tableBorder">
-	<tr>
-		<td colspan=15 bgcolor="#4aa5ca">
-			<div>当前执行SQL语句：<font color="red"><%response.write sql%></font></div>
-		</td>
-	</tr>
 </table>
 </body>
 </html>

@@ -229,6 +229,19 @@
         <td align="center" valign="middle" class="td1"><font color="Red">修复</font></td>
         <td class="td1">修复添加账户时，总提示&ldquo;已经存在&rdquo;的错误提示BUG。</td>
       </tr>
+      <tr>
+        <td rowspan="3" align="center" class="td1">2023-6-15</td>
+        <td align="center" valign="middle" class="td1"><font color="Red">修复</font></td>
+        <td class="td1">①修复当没有添加员工、添加资产权限时，列表页面仍然显示&ldquo;添加&rdquo;图标按钮的BUG。</td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle" class="td1"><font color="Red">修复</font></td>
+        <td class="td1">②修复员工、资产列表页面中，同时无导入与导出权限时显示空白单元格的BUG。</td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle" class="td1"><font color="Red">修复</font></td>
+        <td class="td1">③修复各列表页面中结束代码缺失、代码错误等问题。</td>
+      </tr>
 </table>
 
 </body>

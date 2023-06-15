@@ -1,15 +1,15 @@
 <!--#include file="../inc/conn.asp"-->
 <!--#include file="../inc/mysession.asp" -->
+
 <link href="../css.css" rel="stylesheet" type="text/css">
 <link href="../images/tab.css" rel="stylesheet" type="text/css">
-
 <%
 on error resume next
 call admintop()
 if Instr(session("juese"),"|201,")=0 then %>
-   <!--#include file="../inc/quanxian.asp"-->
+<!--#include file="../inc/quanxian.asp"-->
 <!--#include file="../inc/function.asp"-->
-  <%
+<%
   response.end
 else
 dim action, s_id
@@ -34,9 +34,9 @@ end select
   
     <td><table border="0" cellspacing="1" cellpadding="4" bgcolor="#FFFFFF" align="center" width="100%">
         <tr>
-          <td height=25  align=left colspan=17  class=classtop1><img src="../images/table.gif" width="16" height="14"><img src="../images/jt.gif" width="5" height="6">&nbsp;<b>管理标签</b></td>
+          <td height="25" align="left" colspan="3" class="classtop1"><img src="../images/table.gif" width="16" height="14"><img src="../images/jt.gif" width="5" height="6">&nbsp;<b>管理标签</b></td>
         </tr>
-        <form name=form2 method=post action=news_list_lb.asp>
+        <form name="form2" method="post" action="news_list_lb.asp">
           <tr>
             <td class="classtd" align="center"><select name="anclassid" onChange="var jmpURL=this.options[this.selectedIndex].value ; if(jmpURL!='') {window.location=jmpURL;} else {this.selectedIndex=0 ;}" >
                 <option selected style="background-color:#B0E2FF">--快速跳转--</option>
@@ -53,17 +53,16 @@ end select
             rs.close:set rs=nothing
          %>
               </select></td>
-            <td   class="classtd" align="center"><script language="javascript">
-function getlabel()
-{
-document.form1.action="qrcode1.asp";
-document.form1.submit();
-
-}
-</script>
+            <td class="classtd" align="center"><script language="javascript">
+				function getlabel(){
+					document.form1.action="qrcode1.asp";
+					document.form1.submit();
+				}
+				</script>
               <input class=button type="button" value="标签打印" language="javascript" onclick="getlabel()"/>
-            &nbsp;<INPUT type="button" class=button  size=3 value='重置打印' name=Submit5  onClick="window.location.href='cz_dyzt.asp?zt=cz';return confirm('确定重置打印?');"></td>
-            <td class="classtd" colspan="4" >分类：
+              &nbsp;
+              <INPUT type="button" class=button size=3 value='重置打印' name=Submit5  onClick="window.location.href='cz_dyzt.asp?zt=cz';return confirm('确定重置打印?');"></td>
+            <td class="classtd">分类：
               <select name=s_name1>
                 <option value="0">全部分类</option>
                 <%set rs=conn.execute("select s_id,s_name,s_bname from [admin_sort] order by s_paixu desc")
@@ -96,12 +95,10 @@ document.form1.submit();
       </table>
       <table border="0" cellspacing="1" cellpadding="4" bgcolor="#6298E1" align="center" width="100%">
         <%
-		   
 		pagecount=request("page")
 		if pagecount<1 or pagecount="" then
 		  pagecount="1"
 		end if
-		   
 s_name=replace(request("s_name"),"'","’")
 synx=replace(request("synx"),"'","’")
 gjc=replace(request("gjc"),"'","’")
@@ -167,18 +164,36 @@ If gjc<>"" and fenlei="7" Then sql=sql&" and (zt like '%"&gjc&"%')"
 rs.open sql,conn, 1, 1
 
 %>
-<script language="javascript" src="../js/check.js"></script>
+        <script language="javascript" src="../js/check.js"></script>
         <tr class=classtop1>
           <td nowrap height="15" align="center" width="5%"  background="../images/th_bg.gif"><strong><a href="javascript:void(0);" onclick="checkAll()"><font color="yellow">全</font></a>\<a href="javascript:void(0);" onclick="uncheckAll()"><font color="yellow">否</font></a></strong></td>
-          <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong><%toptitle "1","ID",pagecount,gourl,""%></strong></td>
-          <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong><%toptitle "2","资产编号",pagecount,gourl,""%></strong></td>
-          <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong><%toptitle "3","资产类别",pagecount,gourl,""%></strong></td>
-          <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong><%toptitle "4","资产型号",pagecount,gourl,""%></strong></td>
-          <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong><%toptitle "5","所属公司",pagecount,gourl,""%></strong></td>
-          <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong><%toptitle "6","所属部门",pagecount,gourl,""%></strong></td>
-          <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong><%toptitle "7","存放位置",pagecount,gourl,""%></strong></td>
-          <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong><%toptitle "8","使用人",pagecount,gourl,""%></strong></td>
-          <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong><%toptitle "9","状态",pagecount,gourl,""%></strong></td>
+          <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong>
+            <%toptitle "1","ID",pagecount,gourl,""%>
+            </strong></td>
+          <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong>
+            <%toptitle "2","资产编号",pagecount,gourl,""%>
+            </strong></td>
+          <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong>
+            <%toptitle "3","资产类别",pagecount,gourl,""%>
+            </strong></td>
+          <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong>
+            <%toptitle "4","资产型号",pagecount,gourl,""%>
+            </strong></td>
+          <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong>
+            <%toptitle "5","所属公司",pagecount,gourl,""%>
+            </strong></td>
+          <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong>
+            <%toptitle "6","所属部门",pagecount,gourl,""%>
+            </strong></td>
+          <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong>
+            <%toptitle "7","存放位置",pagecount,gourl,""%>
+            </strong></td>
+          <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong>
+            <%toptitle "8","使用人",pagecount,gourl,""%>
+            </strong></td>
+          <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong>
+            <%toptitle "9","状态",pagecount,gourl,""%>
+            </strong></td>
           <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong>二维码</strong></td>
           <td nowrap height="15" align="center" background="../images/th_bg.gif"><strong>资产信息</strong></td>
         </tr>
@@ -206,20 +221,21 @@ rs.open sql,conn, 1, 1
               <%end if%></td>
             <td align="center"><%=rs("id")%></td>
             <td align="center"><%s_id=rs("id")%>
-              <%=Replace(rs("sbbh"),gjc,"<font color=red><b>"&gjc&"</b></font>")%><%if rs("pic") <> "" then%><a href="<%=rs("pic")%>" target="_blank"><img src="../images/img.png" height="12" title="点击查看该资产图片"></a><%end if%></td>
+              <%=Replace(rs("sbbh"),gjc,"<font color=red><b>"&gjc&"</b></font>")%>
+              <%if rs("pic") <> "" then%>
+              <a href="<%=rs("pic")%>" target="_blank"><img src="../images/img.png" height="12" title="点击查看该资产图片"></a>
+              <%end if%></td>
             <td align="center" ><%=(rs("pp"))%></td>
             <td align="center"><%=Replace(rs("xh"),gjc,"<font color=red><b>"&gjc&"</b></font>")%></td>
             <td align="center"><%ssbm=rs("ssbm")%>
               <%=Replace(ssbm,gjc,"<font color=red><b>"&gjc&"</b></font>")%></td>
             <td align="center"><%=rs("department")%></td>
             <td align="center" ><%=Replace(rs("cfdd"),gjc,"<font color=red><b>"&gjc&"</b></font>")%></td>
-            <td align="center">
-				<%if rs("sbcs")="服务器" then%>
-					<%=Replace(rs("ip"),gjc,"<font color=red><b>"&gjc&"</b></font>")%>
-				<%else%>
-					<%=Replace(rs("syz"),gjc,"<font color=red><b>"&gjc&"</b></font>")%>
-				<%end if%>
-			</td>
+            <td align="center"><%if rs("sbcs")="服务器" then%>
+              <%=Replace(rs("ip"),gjc,"<font color=red><b>"&gjc&"</b></font>")%>
+              <%else%>
+              <%=Replace(rs("syz"),gjc,"<font color=red><b>"&gjc&"</b></font>")%>
+              <%end if%></td>
             <td align="center"><%
 		dim zt
 		zt=rs("zt")
@@ -243,7 +259,7 @@ loop
         </form>
         <form action="news_list.asp?<%=fyorder%>&<%=gourl%>" method="post">
           <tr class=botbg>
-            <td height="25" align="center" colspan=15><div align="center"> 共有数据 <b><%=rs.recordcount%></b> 条, 页次: <b><font color=red><%=pagecount%></font>/<%=rs.pagecount%></b>, 
+            <td height="25" align="center" colspan="12"><div align="center"> 共有数据 <b><%=rs.recordcount%></b> 条, 页次: <b><font color=red><%=pagecount%></font>/<%=rs.pagecount%></b>, 
                 当前从第
                 <%
            if pagecount<=1 then
@@ -275,15 +291,17 @@ loop
                 <%end if%>
                 页
                 <input type="submit" name="go" value="跳转" class=button>
-				<%end if%>
-              </div>
-				</td>
+                <%end if%>
+              </div></td>
         </form>
         <%
 End If %>
-	<tr class="classfooter"><td colspan=14><div>当前执行SQL语句：<font color="red">
-    <%response.write sql%></font></div></td></tr>
-<% rs.close
+        <tr class="classfooter">
+          <td colspan="12"><div>当前执行SQL语句：<font color="red">
+              <%response.write sql%>
+              </font></div></td>
+        </tr>
+        <% rs.close
 set rs=Nothing
 %>
       </table></td>

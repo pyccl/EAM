@@ -54,20 +54,22 @@ end select
 <!--#include file="../inc/displaytip.asp"-->
 <table border="0" cellspacing="1" cellpadding="0" height="0" align=center width="100%" bgcolor="#183789">
   
-    <td><table border="0" cellspacing="1" cellpadding="4" bgcolor="#FFFFFF" align="center" width="100%">
+    <td><table border="0" cellspacing="1" cellpadding="3" bgcolor="#FFFFFF" align="center" width="100%">
         <tr>
-          <td height=25  align=left colspan=3 class=classtop1><img src="../images/table.gif" width="16" height="14"><img src="../images/jt.gif" width="5" height="6">&nbsp;<strong>管理员工</strong> <a href="add_yuangong.asp"><img src="../images/add.png"></a></td>
+          <td height="25" align="left" colspan="3" class="classtop1"><img src="../images/table.gif" width="16" height="14"><img src="../images/jt.gif" width="5" height="6">&nbsp;<strong>管理员工</strong><%if Instr(session("juese"),"|501,")<>0 then %><a href="add_yuangong.asp"><img src="../images/add.png"></a><% end if %></td>
         </tr>
         <form name=form2 method=post action=admin_yuangong.asp>
           <tr >
-            <td class="classtd" align="center"><select name="anclassid" onChange="var jmpURL=this.options[this.selectedIndex].value ; if(jmpURL!='') {window.location=jmpURL;} else {this.selectedIndex=0 ;}" >
+            <td class="classtd" align="center" <%if Instr(session("juese"),"|504,")=0 and Instr(session("juese"),"|505,")=0 then %>colspan="2"<% end if %>><select name="anclassid" onChange="var jmpURL=this.options[this.selectedIndex].value ; if(jmpURL!='') {window.location=jmpURL;} else {this.selectedIndex=0 ;}" >
                 <option selected>--快速跳转--</option>
                 <option value=admin_yuangong.asp style="background-color:#B0E2FF">查看全部员工</option>
                 <option value="?synx=view" style="background-color:#B0E2FF">超过5年员工</option>
               </select></td>
-            <td class="classtd"><input type=button class="button" onClick="location.href='upload/员工汇总表.xls'" value="模板" <%if Instr(session("juese"),"|504,")=0 then%> hidden disabled <%end if%> > <input type=button class="button" onClick="location.href='import.asp'" value="导入" onmousemove="position();" onmouseout="hide();" <%if Instr(session("juese"),"|504,")=0 then%> hidden disabled <%end if%> >
-			<input name=ifive type="button" class=button onClick="window.location.href='excel_yg.asp?ly=0';" value='导出超5年' size=3 <%if Instr(session("juese"),"|505,")=0 then%> hidden disabled<%end if%> ><!--<font color=red>导入前，请把模板传到根目录/user/upload/覆盖同名文件</font>--></td>
-            <td colspan="4" class="classtd" >
+			<%if Instr(session("juese"),"|504,")<>0 and Instr(session("juese"),"|505,")<>0 then %>
+				<td class="classtd"><input type=button class="button" onClick="location.href='upload/员工汇总表.xls'" value="模板" <%if Instr(session("juese"),"|504,")=0 then%> hidden disabled <%end if%> > <input type=button class="button" onClick="location.href='import.asp'" value="导入" onmousemove="position();" onmouseout="hide();" <%if Instr(session("juese"),"|504,")=0 then%> hidden disabled <%end if%> >
+				<input name=ifive type="button" class=button onClick="window.location.href='excel_yg.asp?ly=0';" value='导出超5年' size=3 <%if Instr(session("juese"),"|505,")=0 then%> hidden disabled<%end if%> ></td>
+			<%end if%>
+            <td class="classtd" >
 			日期：
 				<input name="sj1" id="sj1" class="form" type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'sj2\')||\'%y-%M-%d\'}'})" style="WIDTH: 80px"/>
 				-
@@ -267,7 +269,8 @@ rs.AbsolutePage=pagecount
             <td align="center">
               <input class=button type="button" value="修改" onclick="javascript:window.location.href='xg_yuangong.asp?id=<%=y_id%>&page=<%=pagecount%>'" <%if Instr(session("juese"),"|503,")=0 then%> disabled hidden<%end if %> > 
                <input name="Submit2" type="button" class="button" onclick="{if(confirm('确认删除姓名：'+'<%=rs("xingming")%>'+'，身份证号：'+'<%=rs("idcard")%>'+'的员工么？')){location.href='admin_yuangong.asp?action=del&amp;s_id=<%=rs("id")%>&amp;xingming=<%=rs("xingming")%>&amp;idcard=<%=rs("idcard")%>&amp;gjc=<%=gjc%>&amp;page=<%=request("page")%>';}return false;}" value="删除" <%if Instr(session("juese"),"|506,")=0 or rs2.recordcount>0 then%> disabled hidden <%end if %> >
-          </tr>
+               <%if Instr(session("juese"),"|503,")=0 and Instr(session("juese"),"|506,")=0 then response.write "<img src=../images/note.gif><font color=red>无权操作！</font>" end if %>
+            </tr>
           <%
 			rs2.close
 			set rs2=Nothing
@@ -280,7 +283,7 @@ if j>=rs.pagesize then exit do
         </form>
         <form action="admin_yuangong.asp?<%=fyorder%>&<%=gourl%>" method="post">
           <tr class=botbg>
-            <td height="25" align="center" colspan=19><div align="center"> 共有数据 <strong><%=rs.recordcount%></strong> 条, 页次: <strong><font color=red><%=pagecount%></font>/<%=rs.pagecount%></strong>, 
+            <td height="25" align="center" colspan="14"><div align="center"> 共有数据 <strong><%=rs.recordcount%></strong> 条, 页次: <strong><font color=red><%=pagecount%></font>/<%=rs.pagecount%></strong>, 
               当前从第
               <%
 			   if pagecount<=1 then
@@ -315,8 +318,11 @@ if j>=rs.pagesize then exit do
   <%end if%>
             </div></td>
         </form>
-        <%
-End If 
+        <%End If%>
+        <tr class="classfooter">
+          <td colspan="14"><div>当前执行SQL语句：<font color="red"><%response.write sql%></font></div></td>
+        </tr>
+<%
 rs.close
 set rs=Nothing
 %>
@@ -324,12 +330,5 @@ set rs=Nothing
   </tr>
 </table>
 <%end if%>
-<table border="0" cellspacing="1" cellpadding="4" bgcolor="#FFFFFF" align="center" width="100%">
-  <tr class="classfooter">
-    <td colspan=15><div>当前执行SQL语句：<font color="red">
-        <%response.write sql%>
-        </font></div></td>
-  </tr>
-</table>
 <div id="tip" style="position:fixed; visibility:hidden; background:#9F97FF;width:120px;"><strong>导入文件请先下载模板，修改后上传到/user/upload/目录下替换，最后再点击“导入”按钮。</strong></div>
   

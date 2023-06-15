@@ -17,10 +17,10 @@ else %>
 <body>
 <table width="100%" border="0" cellspacing="1" cellpadding="4" bgcolor="#6298E1">
   <form action ="save_user.asp?action=add" method="post" name="addFrm">
-    <tr class=classtop1>
-      <th height=24 colspan=10><B><%=session("companyname")%>系统账户管理</b></th>
+    <tr class="classtop1">
+      <th height="24" colspan="10"><B><%=session("companyname")%>系统账户管理</b></th>
     </tr>
-    <tr class=classtop1>
+    <tr class="classtop1">
       <td nowrap background="../images/th_bg.gif" height="24"><div align="center"><strong>ID</strong></div></td>
       <td nowrap background="../images/th_bg.gif" height="24"><div align="center"><strong>帐户名</strong></div></td>
       <td nowrap background="../images/th_bg.gif" height="24"><div align="center"><strong>姓名</strong></div></td>
@@ -107,7 +107,7 @@ loop
   </form>
   <form action="user_info.asp" method="post">
     <tr class="botbg">
-      <td height="25" align="center" colspan=18><div align="center"> 共有 <b><%=rs.recordcount%></b> 个管理员, 页次: <b><font color=red><%=pagecount%></font>/<%=rs.pagecount%></b>, 
+      <td height="25" align="center" colspan="10"><div align="center"> 共有 <b><%=rs.recordcount%></b> 个管理员, 页次: <b><font color=red><%=pagecount%></font>/<%=rs.pagecount%></b>, 
           当前从第
           <%
            if pagecount<=1 then
@@ -142,15 +142,15 @@ loop
 			<%end if%>
         </div></td>
   </form>
-  <%
-End If 
+  <%End If%>
+        <tr class="classfooter">
+          <td colspan="10"><div>当前执行SQL语句：<font color="red"><%response.write sql%></font></div></td>
+        </tr>
+<%
 rs.close
 set rs=Nothing
 %>
 </table>
-<table border="0" cellspacing="1" cellpadding="4" align="center" width="100%" class="tableBorder">
-	<tr><td colspan=15 bgcolor="#4aa5ca"><div>当前执行SQL语句：<font color="red">
-    <%response.write sql%></font></div></td></tr></table>
 <%end if%>
 </body>
 </html>

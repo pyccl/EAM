@@ -55,7 +55,7 @@ end select
 %>
 <table border="0" cellspacing="1" cellpadding="4" bgcolor="#6298E1" align="center" width="100%">
   <tr>
-    <td align=center colspan=18 class=classtop><B>小类管理</b>
+    <td align=center colspan="5" class=classtop><strong>小类管理</strong>
       <select name=bname id="bname"  onChange="var jmpURL=this.options[this.selectedIndex].value ; if(jmpURL!='') {window.location=jmpURL;} else {this.selectedIndex=0 ;}" >
         <option value="">请选择分类</option>
         <%set rs=conn.execute("select s_id,s_name from [admin_bsort] ORDER BY s_paixu")
@@ -140,7 +140,7 @@ if s_name1<>"" then
     </tr>
   </form>
   <tr class=classtop1>
-    <td height="15" colspan="5" class="classtop1">排序决定显示位置：序号越小越在上，排序号码相同则按照ID号码排序。</td>
+    <td height="15" colspan="5" class="classtop1">排序：序号越小越在上；残值率：将参与资产折旧计算。</td>
   </tr>
 </table>
 <%

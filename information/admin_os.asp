@@ -52,15 +52,15 @@ response
 end select
 %>
 <table border="0" cellspacing="1" cellpadding="4" bgcolor="#FFFFFF" align="center" width="100%">
-  <form name=form2 method=post action=admin_os.asp>
+  <form name="form2" method="post" action="admin_os.asp">
     <tr>
-      <td class=classtop1 colspan="15" align=center><B>操作系统管理</b></td>
+      <td class="classtop1" align=center><B>操作系统管理</b></td>
     </tr>
     <tr>
-      <td class="classtd" colspan="15" align=right>检索关键词：
+      <td class="classtd" align=right>检索关键词：
         <input name="gjc" size="25" class=form>
         &nbsp;&nbsp;
-        <input type=submit name=tiaojian value=" 查 询 " class=button>        &nbsp;</td>
+        <input type="submit" name="tiaojian" value=" 查 询 " class=button>&nbsp;</td>
     </tr>
   </form>
 </table>

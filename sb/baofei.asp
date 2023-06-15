@@ -45,9 +45,9 @@ end select
 <table border="0" cellspacing="1" cellpadding="0" height="0" align=center width="100%" bgcolor="#183789">
     <td><table border="0" cellspacing="1" cellpadding="4" bgcolor="#FFFFFF" align="center" width="100%">
         <tr>
-          <td height=25  align=left colspan=5 class=classtop1><img src="../images/table.gif" width="16" height="14"><img src="../images/jt.gif" width="5" height="6">&nbsp;<b>管理报废资产</b></td>
+          <td height="25" align="left" colspan="3" class="classtop1"><img src="../images/table.gif" width="16" height="14"><img src="../images/jt.gif" width="5" height="6">&nbsp;<b>管理报废资产</b></td>
         </tr>
-        <form name=form2 method=post action=baofei.asp>
+        <form name="form2" method="post" action="baofei.asp">
           <tr >
             <td class="classtd" align="center"><select name="anclassid" onChange="var jmpURL=this.options[this.selectedIndex].value ; if(jmpURL!='') {window.location=jmpURL;} else {this.selectedIndex=0 ;}" >
                 <option selected>--快速跳转--</option>
@@ -64,10 +64,10 @@ end select
            rs.close:set rs=nothing
 			%>
               </select></td>
-            <td class="classtd"><input type="button" class=button  size=3 value='返回正常资产' name=ifive onClick="window.location.href='news_list.asp';" >
+            <td class="classtd"><input type="button" class="button" size="3" value='返回正常资产' name=ifive onClick="window.location.href='news_list.asp';">
               <br></td>
-            <td colspan="4" class="classtd" >分类：
-              <select name=s_name1>
+            <td class="classtd" >分类：
+              <select name="s_name1">
                 <option value="all">全部分类</option>
                 <%
 			set rs=conn.execute("select * from [admin_sort] order by s_paixu desc")
@@ -215,7 +215,7 @@ if j>=rs.pagesize then exit do
         </form>
         <form action="baofei.asp?<%=fyorder%>&<%=gourl%>" method="post">
           <tr class="botbg">
-            <td height="25" align="center" colspan=14><div align="center"> 共有 <b><%=rs.recordcount%></b> 条记录, 页次: <b><font color=red><%=pagecount%></font>/<%=rs.pagecount%></b>, 
+            <td height="25" align="center" colspan="9"><div align="center"> 共有 <b><%=rs.recordcount%></b> 条记录, 页次: <b><font color=red><%=pagecount%></font>/<%=rs.pagecount%></b>, 
                 当前从第
                 <%
            if pagecount<=1 then
@@ -252,18 +252,13 @@ if j>=rs.pagesize then exit do
                 <%end if%>
               </div></td>
         </form>
-        <%
-End If 
-rs.close
+	<%End If %>
+        <tr class="classfooter">
+          <td colspan="9"><div>当前执行SQL语句：<font color="red"><%response.write sql%></font></div></td>
+        </tr>
+	<%rs.close
 set rs=Nothing
 %>
       </table></td>
-  </tr>
-</table>
-<table border="0" cellspacing="1" cellpadding="4" bgcolor="#FFFFFF" align="center" width="100%">
-  <tr class="classfooter">
-    <td colspan=15><div>当前执行SQL语句：<font color="red">
-        <%response.write sql%>
-        </font></div></td>
   </tr>
 </table>

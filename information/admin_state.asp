@@ -56,11 +56,11 @@ end select
 %>
 <table border="0" cellspacing="1" cellpadding="4" bgcolor="#FFFFFF" align="center" width="100%">
     <tr>
-      <td class=classtop1 colspan="15" align=center><B>状态管理</b></td>
+      <td class="classtop1" align="center"><B>状态管理</b></td>
     </tr>
-  <form name=form2 method=post action=admin_state.asp>
+  <form name="form2" method="post" action="admin_state.asp">
     <tr>
-      <td class="classtd" colspan="15" align=right>检索关键词：
+      <td class="classtd" align="right">检索关键词：
         <input name="gjc" size="25" class=form>        &nbsp;&nbsp;
         <input type=submit name=tiaojian value=" 查 询 " class=button></td>
     </tr>
@@ -141,7 +141,7 @@ loop
 %>
   <form action="admin_state.asp" method="post">
     <tr class=botbg>
-      <td height="25" align="center" colspan=15><div align="center"> 共有 <b><%=rs.recordcount%></b> 条记录, 页次: <b><font color=red><%=pagecount%></font>/<%=rs.pagecount%></b>, 
+      <td height="25" align="center" colspan="5"><div align="center"> 共有 <b><%=rs.recordcount%></b> 条记录, 页次: <b><font color=red><%=pagecount%></font>/<%=rs.pagecount%></b>, 
         当前从第
         <%
            if pagecount<=1 then
@@ -175,8 +175,7 @@ loop
   <input type="submit" name="go" value="跳转" class=button>
   <% end if %>
       </div></td>
-    <tr class=classtop1>
-      <td colspan=15><div>&nbsp;&nbsp;状态颜色：用于在统计中显示；排序：数字越小越靠前。</div></td>
+		<tr class="classtop1"><td colspan="5"><div>颜色：用于在统计中显示；排序：数字越小越靠前。</div></td></tr>
   </form>
   <%
 End If 

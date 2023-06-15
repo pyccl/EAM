@@ -57,13 +57,12 @@ end select
 %>
   <table border="0" cellspacing="1" cellpadding="4" bgcolor="#6298E1" align="center" width="100%">
       <%
-
 set rs=server.CreateObject("adodb.recordset")
 rs.open "select * from admin_bsort order by s_paixu asc", conn, 1, 1
 dim i
 i=rs.recordcount%>
       <tr class=classtop1>
-        <td  height="15" colspan="5" align="center"><B>大类管理</b></td>
+        <td  height="15" colspan="5" align="center"><strong>大类管理</strong></td>
       </tr>
       <tr class=classtop1>
         <td nowrap background="../images/th_bg.gif" height="15" align="center"><strong>ID</strong></td>

@@ -46,7 +46,7 @@ end select
 <table border="0" cellspacing="1" cellpadding="0" height="0" align=center width="100%" bgcolor="#183789">
     <td><table border="0" cellspacing="1" cellpadding="4" bgcolor="#FFFFFF" align="center" width="100%">
         <tr>
-          <td height=25  align=left colspan=6 class=classtop1><img src="../images/table.gif" width="16" height="14"><img src="../images/jt.gif" width="5" height="6">&nbsp;<strong>资产折旧表</strong></td>
+          <td height="25" align="left" colspan="4" class="classtop1"><img src="../images/table.gif" width="16" height="14"><img src="../images/jt.gif" width="5" height="6">&nbsp;<strong>资产折旧表</strong></td>
         </tr>
         <form name=form2 method=post action=zhejiu_list.asp>
           <tr>
@@ -99,7 +99,7 @@ end select
 关键词：
 <input name="gjc" size="15" class=form>
 <input type=submit name=tiaojian value=" 查 询 " class=button></td>
-            <td colspan="4" class="classtd" >
+            <td class="classtd" >
 				<INPUT type="button" class=button  size=3 value='导出结果' name=dcjg onClick="window.location.href='excel_zj.asp?ly=2&synx=2&pp=<%=request("s_name1")%>&fenlei=<%=request("fenlei")%>&gjc=<%=request("gjc")%>&sj1=<%=request("sj1")%>&sj2=<%=request("sj2")%>';" <%if Instr(session("juese"),"|203,")=0 then%> hidden disabled<%end if%> >
 			</td>
           </tr>
@@ -383,7 +383,7 @@ Else
 			</form>
 			<form action="zhejiu_list.asp?<%=fyorder%>&<%=gourl%>" method="post">
 			  <tr class="botbg">
-				<td height="25" align="center" colspan=21><div align="center"> 共有数据 <b><%=rs.recordcount%></b> 条, 页次: <b><font color=red><%=pagecount%></font>/<%=rs.pagecount%></b>, 
+				<td height="25" align="center" colspan="17"><div align="center"> 共有数据 <b><%=rs.recordcount%></b> 条, 页次: <b><font color=red><%=pagecount%></font>/<%=rs.pagecount%></b>, 
 					当前从第
 					<%
 			   if pagecount<=1 then
@@ -419,8 +419,11 @@ Else
 					<%end if%>
 			    </div></td>
 		</form>
-			<%
-End If
+			<%End If %>
+        <tr class="classfooter">
+          <td colspan="17"><div>当前执行SQL语句：<font color="red"><%response.write sql%></font></div></td>
+        </tr>
+<%
 css=rs.pagesize
 rs.close
 set rs=Nothing
@@ -429,11 +432,3 @@ set rs=Nothing
   </tr>
 </table>
 <%end if%>
-<table border="0" cellspacing="1" cellpadding="4" bgcolor="#FFFFFF" align="center" width="100%">
-  <tr class="classfooter">
-    <td colspan=15><div>当前执行SQL语句：<font color="red">
-        <%response.write sql%>
-        </font></div>
-	</td>
-  </tr>
-</table>

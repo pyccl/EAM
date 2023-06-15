@@ -44,11 +44,11 @@ else
   
     <td><table border="0" cellspacing="1" cellpadding="4" bgcolor="#FFFFFF" align="center" width="100%">
         <tr>
-          <td height=25  align=left colspan=5 class=classtop1><img src="../images/table.gif" width="16" height="14"> <img src="../images/jt.gif" width="5" height="6"> &nbsp;<b>管理资产</b> <a href="dj.asp"> <img src="../images/add.png"> </a> &nbsp;(<a href="baofei.asp"><font color="#FFFFFF">管理报废资产</font></a>) </td>
+          <td height=25  align=left colspan=3 class=classtop1><img src="../images/table.gif" width="16" height="14"> <img src="../images/jt.gif" width="5" height="6"> &nbsp;<b>管理资产</b><%if Instr(session("juese"),"|101,")<>0 then %><a href="dj.asp"><img src="../images/add.png"> </a> <% end if %>(<a href="baofei.asp"><font color="#FFFFFF">管理报废资产</font></a>) </td>
         </tr>
         <form name=form2 method=post action=news_list.asp>
           <tr>
-            <td class="classtd" align="center"><select name="anclassid" onChange="var jmpURL=this.options[this.selectedIndex].value ; if(jmpURL!='') {window.location=jmpURL;} else {this.selectedIndex=0 ;}" >
+            <td class="classtd" align="center" <%if Instr(session("juese"),"|110,")=0 and Instr(session("juese"),"|109,")=0 then %>colspan="2"<% end if %>><select name="anclassid" onChange="var jmpURL=this.options[this.selectedIndex].value ; if(jmpURL!='') {window.location=jmpURL;} else {this.selectedIndex=0 ;}" >
                 <option selected style="background-color:#B0E2FF">--快速跳转--</option>
                 <option value=news_list.asp style="background-color:#B0E2FF">查看全部资产</option>
                 <option value="?synx=zaibao" style="background-color:#B0E2FF">未超过5年资产</option>
@@ -65,11 +65,13 @@ else
 						rs.close:set rs=nothing
 						%>
               </select></td>
+			<%if Instr(session("juese"),"|110,")<>0 and Instr(session("juese"),"|109,")<>0 then %>
             <td class="classtd"><input type=button class="button" onClick="location.href='upload/资产汇总表.xls'" value="模板" <%if Instr(session("juese"),"|109,")=0 then%>hidden disabled<%end if%> >
               <input type=button class="button" onClick="location.href='import.asp'" value="导入" onmousemove="position();" onmouseout="hide();" <%if Instr(session("juese"),"|109,")=0 then%>hidden disabled<%end if%> >
               <input type="button" class=button size=3 value='导出未超5年' name=iall onClick="window.location.href='excel_cx.asp?ly=2&sj=0';" <%if Instr(session("juese"),"|110,")=0 then%> hidden disabled<%end if%> >
               <input type="button" class=button  size=3 value='导出超5年' name=ifive onClick="window.location.href='excel_cx.asp?ly=2&sj=1';" <%if Instr(session("juese"),"|110,")=0 then%> hidden disabled<%end if%> ></td>
-            <td colspan="4" class="classtd" >分类：
+			<% end if %>
+            <td class="classtd" >分类：
               <select name=s_name1>
                 <option value="all">全部分类</option>
                 <%
@@ -104,7 +106,6 @@ else
       </table>
       <table border="0" cellspacing="1" cellpadding="4" bgcolor="#6298E1" align="center" width="100%">
         <%
-		   
 	pagecount=request("page")
 	if pagecount<1 or pagecount="" then
 	  pagecount="1"
@@ -195,7 +196,7 @@ else
         <%
 	   
 	if rs.eof and rs.bof then
-		response.write "<tr><td colspan=11 height=30 class=classtd><div align=center><img src=../images/note.gif><font color=red size=+1>数据为空！请添加。</font></div></td></tr>"
+		response.write "<tr><td colspan=11 height=30 class=classtd><div align=center><img src=../images/note.gif><font color=red size=+1>暂无资产！请添加。</font></div></td></tr>"
 	Else
 		if not isempty(request("page")) then   
 			pagecount=cint(request("page"))   
@@ -277,7 +278,7 @@ else
 				<%if Instr(session("juese"),"|106,")=0 or zt<>"闲置待发" then%> disabled hidden <%end if%> >
               <input class="button" type="button" name="Submit2" value="删" onclick="{if(confirm('确认删除么?')){location.href='news_list.asp?action=del&amp;s_id=<%=rs("id")%>&amp;sbbh=<%=rs("sbbh")%>&amp;gjc=<%=gjc%>&amp;s_name=<%=s_name%>&amp;page=<%=request("page")%>';}return false;}"
 				<%if Instr(session("juese"),"|111,")=0 or zt="正常使用" then%> disabled hidden <%end if%> >
-              <%if Instr(session("juese"),"|103,")=0 and Instr(session("juese"),"|104,")=0 and Instr(session("juese"),"|105,")=0 and Instr(session("juese"),"|106,")=0 and Instr(session("juese"),"|107,")=0 and Instr(session("juese"),"|111,")=0 then response.write "<img src=../images/note.gif>无权操作" end if %></td>
+              <%if Instr(session("juese"),"|103,")=0 and Instr(session("juese"),"|104,")=0 and Instr(session("juese"),"|105,")=0 and Instr(session("juese"),"|106,")=0 and Instr(session("juese"),"|107,")=0 and Instr(session("juese"),"|111,")=0 then response.write "<img src=../images/note.gif><font color=red>无权操作！</font>" end if %></td>
           </tr>
           <%
 				rs.movenext
@@ -287,7 +288,7 @@ else
         </form>
         <form action="news_list.asp?<%=fyorder%>&<%=gourl%>" method="post">
           <tr class="botbg">
-            <td height="25" align="center" colspan=15><div align="center"> 共有 <b><%=rs.recordcount%></b> 条记录, 页次: <b><font color=red><%=pagecount%></font>/<%=rs.pagecount%></b>, 
+            <td height="25" align="center" colspan="11"><div align="center"> 共有 <b><%=rs.recordcount%></b> 条记录, 页次: <b><font color=red><%=pagecount%></font>/<%=rs.pagecount%></b>, 
                 当前从第
                 <%
 				   if pagecount<=1 then
@@ -324,20 +325,17 @@ else
         </form>
         <%
 	End If
-	css=rs.pagesize
-	rs.close
+	css=rs.pagesize %>
+        <tr class="classfooter">
+          <td colspan="11"><div>当前执行SQL语句：<font color="red">
+              <%response.write sql%>
+              </font></div></td>
+        </tr>
+	<% rs.close
 	set rs=Nothing
 	%>
       </table></td>
   </tr>
 </table>
 <%end if%>
-<table border="0" cellspacing="1" cellpadding="4" bgcolor="#FFFFFF" align="center" width="100%">
-  <tr class="classfooter">
-    <td colspan=15><div>当前执行SQL语句：<font color="red">
-        <%response.write sql%>
-
-        </font></div></td>
-  </tr>
-</table>
 <div id="tip" style="position:fixed; visibility:hidden; background:#9F97FF;width:120px;"><strong>导入文件请先下载模板，修改后上传到/sb/upload/目录下替换，最后再点击“导入”按钮。</strong></div>
