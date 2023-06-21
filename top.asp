@@ -82,7 +82,7 @@ document.getElementById(obj).style.backgroundColor="#a8a5a5";
 			
 			
             <td width="75"><div align="center"><span class="STYLE1"></span><span class="STYLE1"><a href="javascript:adClick('left.asp?id=xx', 'user/admin_yuangong.asp');"  id="a3"  onclick="change(this.id)">信息管理</a></span></div></td><td width="4"><img src="images/default_13.gif" width="4" height="23" /></td>
-            <td width="75"><div align="center"><span class="STYLE1"></span><span class="STYLE1"><a href="javascript:adClick('left.asp?id=xt', 'user/user_log.asp');"  id="a4" onclick="change(this.id)">系统管理</a></span></div></td><td width="4"><img src="images/default_13.gif" width="4" height="23" /></td>
+            <td width="75"><div align="center"><span class="STYLE1"></span><span class="STYLE1"><a href="javascript:adClick('left.asp?id=xt', 'admin/user_log.asp');"  id="a4" onclick="change(this.id)">系统管理</a></span></div></td><td width="4"><img src="images/default_13.gif" width="4" height="23" /></td>
            <td width="75"><div align="center"><span class="STYLE1"></span><span class="STYLE1"><a href="login.asp?action=out"  id="a5" onclick="change(this.id)" target="_parent">退出系统</a></span></div></td><td width="4"><img src="images/default_13.gif" width="4" height="23" /></td>
 
           </tr>

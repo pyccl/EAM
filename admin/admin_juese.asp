@@ -4,7 +4,7 @@
 <%
    Result=request.QueryString("Result")
    ID=request.QueryString("ID")
-if Instr(session("juese"),"|301,")=0 or ID=8 then %>
+if Instr(session("juese"),"|301,")=0 or ID=1 then %>
    <!--#include file="../inc/quanxian.asp"-->
   <%
   response.end
@@ -80,42 +80,43 @@ function checkform()
       <td height="25" align="center" class="classtd" nowrap><div align="left"><strong>&nbsp;具体权限：</strong></div><br>
       <input onClick="CheckAll(this.form)" name="submitallSelect" type="button" class="button"  id="submitallSelect" value="全选" style="HEIGHT: 18px;WIDTH: 36px;"><br><br><input onClick="CheckOthers(this.form)" name="buttonOtherSelect" type="button" class="button"  id="submitOtherSelect" value="反选" style="HEIGHT: 18px;WIDTH: 36px;"></td>
       <td height="25" colspan="3" class="classtd">
-        资产管理：<label>
+        <p>资产管理：
+          <label>
             <input type="checkbox" name="qx101" value="|101," id="qx101" <%if Instr(quanxian,"|101,")>0 then response.write ("checked")%>>
           添加资产</label>
-        <label>
-          <input type="checkbox" name="qx102" value="|102," id="qx102" <%if Instr(quanxian,"|102,")>0 then response.write ("checked")%>>
-          查看资产</label>
-        <label>
-          <input type="checkbox" name="qx103" value="|103," id="qx103" <%if Instr(quanxian,"|103,")>0 then response.write ("checked")%>>
-          修改资产</label>
-        <label>
-          <input type="checkbox" name="qx111" value="|111," id="qx111" <%if Instr(quanxian,"|111,")>0 then response.write ("checked")%>>
-          删除资产</label>
+          <label>
+            <input type="checkbox" name="qx102" value="|102," id="qx102" <%if Instr(quanxian,"|102,")>0 then response.write ("checked")%>>
+            查看资产</label>
+          <label>
+            <input type="checkbox" name="qx103" value="|103," id="qx103" <%if Instr(quanxian,"|103,")>0 then response.write ("checked")%>>
+            修改资产</label>
+          <label>
+            <input type="checkbox" name="qx111" value="|111," id="qx111" <%if Instr(quanxian,"|111,")>0 then response.write ("checked")%>>
+            删除资产</label>
         
-        <label>
-          <input type="checkbox" name="qx104" value="|104," id="qx104" <%if Instr(quanxian,"|104,")>0 then response.write ("checked")%>>
-          借出资产</label>
-        <label>
-          <input type="checkbox" name="qx105" value="|105," id="qx105" <%if Instr(quanxian,"|105,")>0 then response.write ("checked")%>>
-          归还资产</label>
-        <label>
-          <input type="checkbox" name="qx106" value="|106," id="qx106" <%if Instr(quanxian,"|106,")>0 then response.write ("checked")%>>
-          调拨资产</label>
-        <label>
-          <input type="checkbox" name="qx107" value="|107," id="qx107" <%if Instr(quanxian,"|107,")>0 then response.write ("checked")%>>
-          转移资产</label>
-        <label>
-          <input type="checkbox" name="qx109" value="|109," id="qx109" <%if Instr(quanxian,"|109,")>0 then response.write ("checked")%>>
-          导入资产</label>
-        <label>
-          <input type="checkbox" name="qx110" value="|110," id="qx110" <%if Instr(quanxian,"|110,")>0 then response.write ("checked")%>>
-          导出资产</label>
+          <label>
+            <input type="checkbox" name="qx104" value="|104," id="qx104" <%if Instr(quanxian,"|104,")>0 then response.write ("checked")%>>
+            借出资产</label>
+          <label>
+            <input type="checkbox" name="qx105" value="|105," id="qx105" <%if Instr(quanxian,"|105,")>0 then response.write ("checked")%>>
+            归还资产</label>
+          <label>
+            <input type="checkbox" name="qx106" value="|106," id="qx106" <%if Instr(quanxian,"|106,")>0 then response.write ("checked")%>>
+            调拨资产</label>
+          <label>
+            <input type="checkbox" name="qx107" value="|107," id="qx107" <%if Instr(quanxian,"|107,")>0 then response.write ("checked")%>>
+            转移资产</label>
+          <label>
+            <input type="checkbox" name="qx109" value="|109," id="qx109" <%if Instr(quanxian,"|109,")>0 then response.write ("checked")%>>
+            导入资产</label>
+          <label>
+            <input type="checkbox" name="qx110" value="|110," id="qx110" <%if Instr(quanxian,"|110,")>0 then response.write ("checked")%>>
+            导出资产</label>
 		  <br>
         其他资产管理：
         <label>
           <input type="checkbox" name="qx108" value="|108," id="qx108" <%if Instr(quanxian,"|108,")>0 then response.write ("checked")%>>
-        盘点资产</label>
+          盘点资产</label>
 		<label>
             <input type="checkbox" name="qx201" value="|201," id="qx201" <%if Instr(quanxian,"|201,")>0 then response.write ("checked")%>>
         标签管理</label>
@@ -127,13 +128,14 @@ function checkform()
         折旧导出</label>
         <br>
           系统管理：
-        <label> <input type="checkbox" name="qx300" value="|300," id="qx300" <%if Instr(quanxian,"|300,")>0 then response.write ("checked")%>>
-          系统设置</label>
-        <label> <input type="checkbox" name="qx301" value="|301," id="qx301" <%if Instr(quanxian,"|301,")>0 then response.write ("checked")%>>
-          角色管理</label>
-        <label> <input type="checkbox" name="qx302" value="|302," id="qx302" <%if Instr(quanxian,"|302,")>0 then response.write ("checked")%>>
-          账户管理</label>
-        (<label> <input type="checkbox" name="qx306" value="|306," id="qx306" <%if Instr(quanxian,"|306,")>0 then response.write ("checked")%>>
+          <label> <input type="checkbox" name="qx300" value="|300," id="qx300" <%if Instr(quanxian,"|300,")>0 then response.write ("checked")%>>
+            系统设置</label>
+          <label> <input type="checkbox" name="qx301" value="|301," id="qx301" <%if Instr(quanxian,"|301,")>0 then response.write ("checked")%>>
+            角色管理</label>
+          <label> <input type="checkbox" name="qx302" value="|302," id="qx302" <%if Instr(quanxian,"|302,")>0 then response.write ("checked")%>>
+            账户管理</label>
+        (
+        <label> <input type="checkbox" name="qx306" value="|306," id="qx306" <%if Instr(quanxian,"|306,")>0 then response.write ("checked")%>>
           所有账户</label>
         )
         <label> <input type="checkbox" name="qx305" value="|305," id="qx305" <%if Instr(quanxian,"|305,")>0 then response.write ("checked")%>>
@@ -148,22 +150,23 @@ function checkform()
           <input type="checkbox" name="qx307" value="|307," id="qx307" <%if Instr(quanxian,"|307,")>0 then response.write ("checked")%>>
           重置盘点</label>
 		  <br>信息管理：
-        <label> <input type="checkbox" name="qx401" value="|401," id="qx401" <%if Instr(quanxian,"|401,")>0 then response.write ("checked")%>>
-          公司管理</label>
-        <label>
-          <input type="checkbox" name="qx402" value="|402," id="qx402" <%if Instr(quanxian,"|402,")>0 then response.write ("checked")%>>
-          部门管理</label>
-        <label>
-          <input name="qx403" type="checkbox" id="qx403" value="|403," <%if Instr(quanxian,"|403,")>0 then response.write ("checked")%>>
-          分类管理</label>
-        <label>
-          <input name="qx404" type="checkbox" id="qx404" value="|404," <%if Instr(quanxian,"|404,")>0 then response.write ("checked")%>>
-          状态管理</label>
-        <label>
-          <input name="qx405" type="checkbox" id="qx405" value="|405," <%if Instr(quanxian,"|405,")>0 then response.write ("checked")%>>
-          操作系统管理</label>
+          <label> <input type="checkbox" name="qx401" value="|401," id="qx401" <%if Instr(quanxian,"|401,")>0 then response.write ("checked")%>>
+            公司管理</label>
+          <label>
+            <input type="checkbox" name="qx402" value="|402," id="qx402" <%if Instr(quanxian,"|402,")>0 then response.write ("checked")%>>
+            部门管理</label>
+          <label>
+            <input name="qx403" type="checkbox" id="qx403" value="|403," <%if Instr(quanxian,"|403,")>0 then response.write ("checked")%>>
+            分类管理</label>
+          <label>
+            <input name="qx404" type="checkbox" id="qx404" value="|404," <%if Instr(quanxian,"|404,")>0 then response.write ("checked")%>>
+            状态管理</label>
+          <label>
+            <input name="qx405" type="checkbox" id="qx405" value="|405," <%if Instr(quanxian,"|405,")>0 then response.write ("checked")%>>
+            操作系统管理</label>
 <br>
-        人员管理：<label>
+        人员管理：
+        <label>
             <input type="checkbox" name="qx501" value="|501," id="qx501" <%if Instr(quanxian,"|501,")>0 then response.write ("checked")%>>
           添加员工</label>
         <label>
@@ -181,7 +184,23 @@ function checkform()
         <label>
           <input type="checkbox" name="qx505" value="|505," id="qx505" <%if Instr(quanxian,"|505,")>0 then response.write ("checked")%>>
           导出员工</label>
-      </td>
+<br>
+        数据库管理：
+        <label>
+            <input type="checkbox" name="qx601" value="|601," id="qx601" <%if Instr(quanxian,"|601,")>0 then response.write ("checked")%>>
+          压缩数据库</label>
+        <label>
+          <input type="checkbox" name="qx602" value="|602," id="qx602" <%if Instr(quanxian,"|602,")>0 then response.write ("checked")%>>
+          备份数据库</label>
+        <label>
+          <input type="checkbox" name="qx603" value="|603," id="qx603" <%if Instr(quanxian,"|603,")>0 then response.write ("checked")%>>
+          <font color="red">还原数据库</font>
+        </label>
+        <label>
+          <input type="checkbox" name="qx604" value="|604," id="qx604" <%if Instr(quanxian,"|604,")>0 then response.write ("checked")%>>
+          <font color="red">数据库初始化</font>
+        </label>
+        </p></td>
     </tr>
       <%if Result="Modify" then%>
       <tr>
@@ -293,6 +312,18 @@ function checkform()
 				if Instr(quanxian,"|505,")<>0 then
 					rk = rk & "导出员工,"
 				end if
+				if Instr(quanxian,"|601,")<>0 then
+					rk = rk & "压缩数据库,"
+				end if
+				if Instr(quanxian,"|602,")<>0 then
+					rk = rk & "备份数据库,"
+				end if
+				if Instr(quanxian,"|603,")<>0 then
+					rk = rk & "还原数据库,"
+				end if
+				if Instr(quanxian,"|604,")<>0 then
+					rk = rk & "数据库初始化,"
+				end if
 				rk = mid(rk,1,(len(rk)-1))
 				response.write rk
 			end if %>
@@ -362,7 +393,7 @@ sub AdminEdit()
       rs("mingcheng")=trim(Request.Form("mingcheng"))
 	  rs("quanxian")=Request.Form("qx101") & Request.Form("qx102") & Request.Form("qx103") & Request.Form("qx104") & Request.Form("qx105") &_
 	                     Request.Form("qx106") & Request.Form("qx107") & Request.Form("qx108") & Request.Form("qx109") & Request.Form("qx110") & Request.Form("qx111") & Request.Form("qx201") & Request.Form("qx202") & Request.Form("qx203") & Request.Form("qx300") & Request.Form("qx301") & Request.Form("qx302") & Request.Form("qx303") & Request.Form("qx304") & Request.Form("qx305") & Request.Form("qx306") & Request.Form("qx307")&_
-	                     Request.Form("qx401") & Request.Form("qx402") & Request.Form("qx403") & Request.Form("qx404") & Request.Form("qx405") & Request.Form("qx501") & Request.Form("qx502") & Request.Form("qx503") & Request.Form("qx504") & Request.Form("qx505") & Request.Form("qx506")
+	                     Request.Form("qx401") & Request.Form("qx402") & Request.Form("qx403") & Request.Form("qx404") & Request.Form("qx405") & Request.Form("qx501") & Request.Form("qx502") & Request.Form("qx503") & Request.Form("qx504") & Request.Form("qx505") & Request.Form("qx506") & Request.Form("qx601") & Request.Form("qx602") & Request.Form("qx603") & Request.Form("qx603")
 	  rs("beizhu")=trim(Request.Form("beizhu"))
 	  rs("datetime")=now()
 			Set rsa=Server.CreateObject("ADODB.Recordset")
@@ -385,7 +416,7 @@ sub AdminEdit()
 		  rs("mingcheng")=trim(Request.Form("mingcheng"))
 		  rs("quanxian")=Request.Form("qx101") & Request.Form("qx102") & Request.Form("qx103") & Request.Form("qx104") & Request.Form("qx105") &_
 	                     Request.Form("qx106") & Request.Form("qx107") & Request.Form("qx108") & Request.Form("qx109") & Request.Form("qx110") & Request.Form("qx111") & Request.Form("qx201") & Request.Form("qx202") & Request.Form("qx203") & Request.Form("qx300") & Request.Form("qx301") & Request.Form("qx302") & Request.Form("qx303") & Request.Form("qx304") & Request.Form("qx305") & Request.Form("qx306") & Request.Form("qx307")&_
-	                     Request.Form("qx401") & Request.Form("qx402") & Request.Form("qx403") & Request.Form("qx404") & Request.Form("qx405") & Request.Form("qx501") & Request.Form("qx502") & Request.Form("qx503") & Request.Form("qx504") & Request.Form("qx505") & Request.Form("qx506")
+	                     Request.Form("qx401") & Request.Form("qx402") & Request.Form("qx403") & Request.Form("qx404") & Request.Form("qx405") & Request.Form("qx501") & Request.Form("qx502") & Request.Form("qx503") & Request.Form("qx504") & Request.Form("qx505") & Request.Form("qx506") & Request.Form("qx601") & Request.Form("qx602") & Request.Form("qx603") & Request.Form("qx604")
 		  rs("beizhu")=trim(Request.Form("beizhu"))
 		  rs("datetime")=now()
 		end if

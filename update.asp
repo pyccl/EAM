@@ -242,6 +242,15 @@
         <td align="center" valign="middle" class="td1"><font color="Red">修复</font></td>
         <td class="td1">③修复各列表页面中结束代码缺失、代码错误等问题。</td>
       </tr>
+      <tr>
+        <td rowspan="2" align="center" class="td1">2023-6-21</td>
+        <td align="center" valign="middle" class="td1"><font color="Blue">新增</font></td>
+        <td class="td1">①新增对数据库的管理（压缩、备份、还原、初始化等）</td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle" class="td1"><font color="Green">更新</font></td>
+        <td class="td1">②新增admin目录，将关于系统管理的内容放入到此目录下。</td>
+      </tr>
 </table>
 
 </body>

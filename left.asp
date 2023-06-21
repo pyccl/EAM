@@ -251,7 +251,23 @@
                                 <td background="images/default_23.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                       <td width="17%"><div align="right"><img src="images/list.gif" width="10" height="10"></div></td>
-                                      <td width="83%" style="height:1;font-size:12pt; color:#ffffff;filter:glow(color=#215970,strength=1); padding-left:5px;"><a href="../setting.asp" target=mainframe>系统设置</a></td>
+                                      <td width="83%" style="height:1;font-size:12pt; color:#ffffff;filter:glow(color=#215970,strength=1); padding-left:5px;"><a href="admin/setting.asp" target=mainframe>系统设置</a></td>
+                                    </tr>
+                                  </table></td>
+                                <td width="3"><img src="images/default_24.gif" width="3" height="28"></td>
+                              </tr>
+                            </table></td>
+                        </tr>
+						<% end if
+						   if Instr(session("juese"),"|601,")<>0 or Instr(session("juese"),"|602,")<>0 or Instr(session("juese"),"|603,")<>0 or Instr(session("juese"),"|604,")<>0 then%>
+						<tr>
+                          <td style="padding-bottom:3px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td width="3" height="28"><img src="images/default_21.gif" width="3" height="28"></td>
+                                <td background="images/default_23.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                      <td width="17%"><div align="right"><img src="images/list.gif" width="10" height="10"></div></td>
+                                      <td width="83%" style="height:1;font-size:12pt; color:#ffffff;filter:glow(color=#215970,strength=1); padding-left:5px;"><a href="admin/data.asp" target=mainframe>数据库管理</a></td>
                                     </tr>
                                   </table></td>
                                 <td width="3"><img src="images/default_24.gif" width="3" height="28"></td>
@@ -267,7 +283,7 @@
                                 <td background="images/default_23.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                       <td width="17%"><div align="right"><img src="images/list.gif" width="10" height="10"></div></td>
-                                      <td width="83%" style="height:1;font-size:12pt; color:#ffffff;filter:glow(color=#215970,strength=1); padding-left:5px;"><a href="../user/admin_juese.asp?Result=Add" target=mainframe>添加角色</a></td>
+                                      <td width="83%" style="height:1;font-size:12pt; color:#ffffff;filter:glow(color=#215970,strength=1); padding-left:5px;"><a href="../admin/admin_juese.asp?Result=Add" target=mainframe>添加角色</a></td>
                                     </tr>
                                   </table></td>
                                 <td width="3"><img src="images/default_24.gif" width="3" height="28"></td>
@@ -281,7 +297,7 @@
                                 <td background="images/default_23.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                       <td width="17%"><div align="right"><img src="images/list.gif" width="10" height="10"></div></td>
-                                      <td width="83%" style="height:1;font-size:12pt; color:#ffffff;filter:glow(color=#215970,strength=1); padding-left:5px;"><a href="../user/juese.asp" target=mainframe>角色管理</a></td>
+                                      <td width="83%" style="height:1;font-size:12pt; color:#ffffff;filter:glow(color=#215970,strength=1); padding-left:5px;"><a href="../admin/juese.asp" target=mainframe>角色管理</a></td>
                                     </tr>
                                   </table></td>
                                 <td width="3"><img src="images/default_24.gif" width="3" height="28"></td>
@@ -297,7 +313,7 @@
                                 <td background="images/default_23.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                       <td width="17%"><div align="right"><img src="images/list.gif" width="10" height="10"></div></td>
-                                      <td width="83%" style="height:1;font-size:12pt; color:#ffffff;filter:glow(color=#215970,strength=1); padding-left:5px;"><a href="../user/add_user.asp" target=mainframe>添加账户</a></td>
+                                      <td width="83%" style="height:1;font-size:12pt; color:#ffffff;filter:glow(color=#215970,strength=1); padding-left:5px;"><a href="../admin/add_user.asp" target=mainframe>添加账户</a></td>
                                     </tr>
                                   </table></td>
                                 <td width="3"><img src="images/default_24.gif" width="3" height="28"></td>
@@ -313,7 +329,7 @@
                                 <td background="images/default_23.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                       <td width="17%"><div align="right"><img src="images/list.gif" width="10" height="10"></div></td>
-                                      <td width="83%" style="height:1;font-size:12pt; color:#ffffff;filter:glow(color=#215970,strength=1); padding-left:5px;"><a href="../user/user_info.asp" target=mainframe>管理账户</a></td>
+                                      <td width="83%" style="height:1;font-size:12pt; color:#ffffff;filter:glow(color=#215970,strength=1); padding-left:5px;"><a href="../admin/user_info.asp" target=mainframe>管理账户</a></td>
                                     </tr>
                                   </table></td>
                                 <td width="3"><img src="images/default_24.gif" width="3" height="28"></td>
@@ -329,7 +345,7 @@
                                 <td background="images/default_23.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
                                     <tr>
                                       <td width="17%"><div align="right"><img src="images/list.gif" width="10" height="10"></div></td>
-                                      <td width="83%" style="height:1;font-size:12pt; color:#ffffff;filter:glow(color=#215970,strength=1); padding-left:5px;"><a href="user/user_log.asp" target=mainframe>查询日志</a></td>
+                                      <td width="83%" style="height:1;font-size:12pt; color:#ffffff;filter:glow(color=#215970,strength=1); padding-left:5px;"><a href="admin/user_log.asp" target=mainframe>查询日志</a></td>
                                     </tr>
                                   </table></td>
                                 <td width="3"><img src="images/default_24.gif" width="3" height="28"></td>
