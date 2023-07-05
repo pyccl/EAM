@@ -67,7 +67,7 @@ return false;
 			sqlc="select y_id,y_name from admin_shiyongdanwei order by y_paixu asc"
 			rsc.open sqlc,conn,1,3
 			if rsc.bof or rsc.eof then
-				Response.Write "<font color=red>暂无公司！请<a href= " & "../information/admin_shiyongdanwei.asp" & ">添加公司" & "</a>后重试！</font>"
+				Response.Write "暂无公司！请<a href= " & "../information/admin_shiyongdanwei.asp" & "><font color=red><strong>添加公司</strong></font>" & "</a>后重试！"
 			else
 				do while not rsc.eof
 					Response.Write"<label><input name='y_name' type='checkbox'  style='HEIGHT: 15px;WIDTH: 15px;' value='"&rsc("y_name")&"'"

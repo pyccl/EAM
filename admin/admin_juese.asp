@@ -198,7 +198,7 @@ function checkform()
         </label>
         <label>
           <input type="checkbox" name="qx604" value="|604," id="qx604" <%if Instr(quanxian,"|604,")>0 then response.write ("checked")%>>
-          <font color="red">数据库初始化</font>
+          <font color="red">初始化数据库</font>
         </label>
         </p></td>
     </tr>
@@ -363,7 +363,7 @@ function checkform()
 <table border="0" cellspacing="1" cellpadding="4" bgcolor="#FFFFFF" align="center" width="100%">
   <tr bgcolor="#4aa5ca">
     <td colspan=15><div style="color:white">
-      注意：<br>1.日志管理仅有超级管理员有权限。<br>2.标签管理指的是打印、重置打印二维码标签。<br>3.只勾选账户管理时，仅能修改所登录的账户的用户名密码姓名。勾选后方的所有账户后，可管理系统里的所有账户。<br>4.资产管理、部门管理、员工管理是需要对应于账户的权限，账户拥有该公司的管理权后才拥有该处的权限。
+      注意：<br>1.日志管理仅有超级管理员有权限。<br>2.标签管理指的是打印、重置打印二维码标签。<br>3.只勾选账户管理时，仅能修改所登录的账户的用户名密码姓名。勾选后方的所有账户后，可管理系统里的所有账户。<br>4.资产管理、部门管理、员工管理是需要对应于账户的权限，账户拥有该公司的管理权后才拥有该处的权限。<br><font color="red">5.注意：还原数据库、初始化数据库将会清空原数据库数据，请谨慎分配该权限！</font>
     </div></td>
   </tr>
 </table>

@@ -72,7 +72,7 @@ return false;
 				sqlc="select y_name from admin_shiyongdanwei order by y_paixu asc"
 				rsc.open sqlc,conn,1,3
 				if rsc.bof or rsc.eof then
-					Response.Write "<font color=red>暂无公司！请<a href= " & "../information/admin_shiyongdanwei.asp" & ">添加公司" & "</a>后重试！</font>"
+					Response.Write "暂无公司！请<a href= " & "../information/admin_shiyongdanwei.asp" & "><font color=red><strong>添加公司</strong></font>" & "</a>后重试！"
 				else
 					do while not rsc.eof
 						Response.Write"<label><input name='y_name' type='checkbox'  style='HEIGHT: 15px;WIDTH: 15px;' value='"&rsc("y_name")&"'"
@@ -92,16 +92,16 @@ return false;
       <td height=24 class="classtd">
 	  <%
 		 if rs("id") = 1 then
-		 	response.write "<font color=red><b>该用户无法修改此选项！</b></font>"
+		 	response.write "<font color=red><strong>该用户无法修改此选项！</strong></font>"
 		 else
 			if isnull(juese) then
-				response.write "<font color=red><b>原配置为空，请重新选择：</b></font>"
+				response.write "<font color=red><strong>原配置为空，请重新选择：</strong></font>"
 			else
 				set rsd2=server.CreateObject("ADODB.recordset")
 				sql2="select id from juese where id = " & juese
 				rsd2.open sql2,conn,1,3
 				if rsd2.bof or rsd2.eof then
-					response.write "<font color=red><b>原配置错误，请重新选择：</b></font>"
+					response.write "<font color=red><strong>原配置错误，请重新选择：</strong></font>"
 				end if
 				rsd2.close
 				set rsd2=nothing

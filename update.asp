@@ -251,6 +251,11 @@
         <td align="center" valign="middle" class="td1"><font color="Green">更新</font></td>
         <td class="td1">②新增admin目录，将关于系统管理的内容放入到此目录下。</td>
       </tr>
+      <tr>
+        <td align="center" class="td1">2023-7-4</td>
+        <td align="center" valign="middle" class="td1"><font color="Red">修复</font></td>
+        <td class="td1">修复数据库管理中初始化后不能正常登录的问题。</td>
+      </tr>
 </table>
 
 </body>

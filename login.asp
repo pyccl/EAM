@@ -151,7 +151,7 @@ function CheckBrowserIsIE(){
                       </tr>
                       <tr>
                         <td height="32"><div align="center">
-                          <input type="text" name="user">
+                          <input name="user" type="text" tabindex="1">
                         </div></td>
                       </tr>
                     </table></td>
@@ -163,7 +163,7 @@ function CheckBrowserIsIE(){
                       <tr>
 					  
                         <td height="32"><div align="center">
-                          <input type="password" name="userpw"  >
+                          <input name="userpw" type="password" tabindex="2">
                         </div></td>
                       </tr>
                     </table></td>
@@ -177,7 +177,7 @@ function CheckBrowserIsIE(){
           </tr>
           <tr>
             <td height="73" align="center" background="images/login_19.gif">ÑéÖ¤Âë£º
-              <input name="code" type="text" id="code" size="4" maxlength="4">
+              <input name="code" type="text" id="code" tabindex="3" size="4" maxlength="4">
 				<img id="captcha_image" style="height:25px;width:70px;" align="absmiddle" onclick="this.src=this.src+'?'" src="Inc/code.asp"/></td>
           </tr>
           <tr>
