@@ -256,6 +256,16 @@
         <td align="center" valign="middle" class="td1"><font color="Red">修复</font></td>
         <td class="td1">修复数据库管理中初始化后不能正常登录的问题。</td>
       </tr>
+      <tr>
+        <td align="center" class="td1">2023-8-21</td>
+        <td align="center" valign="middle" class="td1"><font color="Green">更新</font></td>
+        <td class="td1">数据库初始化界面更新；部分界面标题修改使一致。</td>
+      </tr>
+      <tr>
+        <td align="center" class="td1">2023-12-15</td>
+        <td align="center" valign="middle" class="td1"><font color="Green">更新</font></td>
+        <td class="td1">统计页面中统计条新增数据显示（&gt;=20%）。</td>
+      </tr>
 </table>
 
 </body>

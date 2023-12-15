@@ -46,7 +46,7 @@
 				rszf.Open sqlzcf, conn, 1, 1
 			    zcf=rszf.recordcount
 			%>
-	        <td height="20" width="<%=round(zcf/zccount*95,2)%>%" nowrap="nowrap" title="<%=rszt("ztm")%>【<%=zcf%>台，<%=round(zcf/zccount*100,2)%>%】" bgcolor="<%=rszt("ztys")%>"></td>
+	        <td height="20" width="<%=round(zcf/zccount*95,2)%>%" nowrap="nowrap" title="<%=rszt("ztm")%>【<%=zcf%>台，<%=round(zcf/zccount*100,2)%>%】" bgcolor="<%=rszt("ztys")%>" align="center"><%if round(zcf/zccount*95,2)>=20 then Response.Write rszt("ztm") & "【" & zcf & "台，" & round(zcf/zccount*100,2) & "%】" %></td>
 	        <%  rszf.Close
 				rszt.movenext
 				loop
@@ -95,7 +95,7 @@
 				rszf.Open sqlzcf, conn, 1, 1
 			    zcf=rszf.recordcount
 			%>
-            <td height="20" width="<%=round(zcf/zccount*95,2)%>%" nowrap="nowrap" title="<%=rszt("s_name")%>【<%=zcf%>台，<%=round(zcf/zccount*100,2)%>%】" bgcolor="<%=rszt("s_color")%>"></td>
+            <td height="20" width="<%=round(zcf/zccount*95,2)%>%" nowrap="nowrap" title="<%=rszt("s_name")%>【<%=zcf%>台，<%=round(zcf/zccount*100,2)%>%】" bgcolor="<%=rszt("s_color")%>" align="center"><%if round(zcf/zccount*95,2)>=20 then Response.Write rszt("s_name") & "【" & zcf & "台，" & round(zcf/zccount*100,2) & "%】" %></td>
             <%  rszf.Close
 				rszt.movenext
 				loop
@@ -143,7 +143,7 @@
 				rszf.Open sqlzcf, conn, 1, 1
 			    zcf=rszf.recordcount
 			%>
-                    <td height="20" width="<%=round(zcf/zccount*95,2)%>%" nowrap="nowrap" title="<%=rszt("y_name")%>【<%=zcf%>台，<%=round(zcf/zccount*100,2)%>%】" bgcolor="<%=rszt("y_color")%>"></td>
+                    <td height="20" width="<%=round(zcf/zccount*95,2)%>%" nowrap="nowrap" title="<%=rszt("y_name")%>【<%=zcf%>台，<%=round(zcf/zccount*100,2)%>%】" bgcolor="<%=rszt("y_color")%>" align="center"><%if round(zcf/zccount*95,2)>=20 then Response.Write rszt("y_name") & "【" & zcf & "台，" & round(zcf/zccount*100,2) & "%】" %></td>
             <% rszf.Close
 				rszt.movenext
 				loop
@@ -206,8 +206,8 @@
 					 rsfyg.Open sqlzyg, conn, 1, 1
 					 fyg2=rsfyg.recordcount
 			%>
-	              <td height="20" width="<%=round(fyg/ygcount*95,2)%>%" nowrap="nowrap" title="男【<%=fyg%>人，<%=round(fyg/ygcount*100,2)%>%】" bgcolor="#00C3FF"></td>
-	              <td height="20" width="<%=round(fyg2/ygcount*95,2)%>%" nowrap="nowrap" title="女【<%=fyg2%>人，<%=round(fyg2/ygcount*100,2)%>%】" bgcolor="#FF5070"></td>
+	              <td width="<%=round(fyg/ygcount*95,2)%>%" height="20" align="center" nowrap="nowrap" bgcolor="#00C3FF" title="男【<%=fyg%>人，<%=round(fyg/ygcount*100,2)%>%】"><%if round(fyg/ygcount*95,2)>=20 then Response.Write "男【" & fyg & "人，" & round(fyg/ygcount*100,2) & "%】" %></td>
+	              <td width="<%=round(fyg2/ygcount*95,2)%>%" height="20" align="center" nowrap="nowrap" bgcolor="#FF5070" title="女【<%=fyg2%>人，<%=round(fyg2/ygcount*100,2)%>%】"><%if round(fyg2/ygcount*95,2)>=20 then Response.Write "女【" & fyg2 & "人，" & round(fyg2/ygcount*100,2) & "%】" %></td>
 	              <%  rszyg.Close %>
                 </tr>
 	            <tr>
@@ -240,7 +240,7 @@
 				rsfyg.Open sqlzyg, conn, 1, 1
 			    fyg=rsfyg.recordcount
 			%>
-	              <td height="20" width="<%=round(fyg/ygcount*95,2)%>%" nowrap="nowrap" title="<%=rszt("y_name")%>【<%=fyg%>人，<%=round(fyg/ygcount*100,2)%>%】" bgcolor="<%=rszt("y_color")%>"></td>
+	              <td height="20" width="<%=round(fyg/ygcount*95,2)%>%" nowrap="nowrap" title="<%=rszt("y_name")%>【<%=fyg%>人，<%=round(fyg/ygcount*100,2)%>%】" bgcolor="<%=rszt("y_color")%>" align="center"><%if round(fyg/ygcount*95,2)>=20 then Response.Write rszt("y_name") & "【" & fyg & "人，" & round(fyg/ygcount*100,2) & "%】" %></td>
 	              <%  rszyg.Close
 				rszt.movenext
 				loop
@@ -256,7 +256,7 @@
 			    fyg=rsfyg.recordcount
 			%>
 	                <font color="<%=rszt("y_color")%>"><%=rszt("y_name")%></font>
-	                <%  rszyg.Close
+                  <%  rszyg.Close
 				rszt.movenext
 				loop
 			%></td>
@@ -323,10 +323,10 @@
 				</tr>
 			<%end if%>
 	            <tr>
-	              <td height="20" width="<%=round(pd9/pdz*100,2)%>%" nowrap="nowrap" title="未盘点【<%=pd9%>台，<%=round(pd9/pdz*100,2)%>%】" bgcolor="#CCCCCC"></td>
-	              <td height="20" width="<%=round(pd1/pdz*100,2)%>%" nowrap="nowrap" title="正常【<%=pd1%>台，<%=round(pd1/pdz*100,2)%>%】" bgcolor="Green"></td>
-				  <td height="20" width="<%=round(pd2/pdz*100,2)%>%" nowrap="nowrap" title="盘盈【<%=pd2%>台，<%=round(pd2/pdz*100,2)%>%】" bgcolor="Blue"></td>
-				  <td height="20" width="<%=round(pd3/pdz*100,2)%>%" nowrap="nowrap" title="盘亏【<%=pd3%>台，<%=round(pd3/pdz*100,2)%>%】" bgcolor="Red"></td>
+	              <td width="<%=round(pd9/pdz*100,2)%>%" height="20" align="center" nowrap="nowrap" bgcolor="#CCCCCC" title="未盘点【<%=pd9%>台，<%=round(pd9/pdz*100,2)%>%】"><%if round(pd9/pdz*100,2)>=20 then Response.Write "未盘点【" & pd9 & "台，" & round(pd9/pdz*100,2) & "%】" %></td>
+	              <td width="<%=round(pd1/pdz*100,2)%>%" height="20" align="center" nowrap="nowrap" bgcolor="Green" title="正常【<%=pd1%>台，<%=round(pd1/pdz*100,2)%>%】"><%if round(pd1/pdz*100,2)>=20 then Response.Write "正常【" & pd1 & "台，" & round(pd1/pdz*100,2) & "%】" %></td>
+				  <td width="<%=round(pd2/pdz*100,2)%>%" height="20" align="center" nowrap="nowrap" bgcolor="Blue" title="盘盈【<%=pd2%>台，<%=round(pd2/pdz*100,2)%>%】"><%if round(pd2/pdz*100,2)>=20 then Response.Write "盘盈【" & pd2 & "台，" & round(pd2/pdz*100,2) & "%】" %></td>
+				  <td width="<%=round(pd3/pdz*100,2)%>%" height="20" align="center" nowrap="nowrap" bgcolor="Red" title="盘亏【<%=pd3%>台，<%=round(pd3/pdz*100,2)%>%】"><%if round(pd3/pdz*100,2)>=20 then Response.Write "盘亏【" & pd3 & "台，" & round(pd3/pdz*100,2) & "%】" %></td>
 	              <%  rszyg.Close %>
                 </tr>
 	            <tr>
@@ -336,7 +336,7 @@
 	          <%rszt.Close
 			set rszt=nothing
 			%>
-	          </table></td>
+            </table></td>
           </tr>
         </tbody>
 <%end if%>
