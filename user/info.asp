@@ -144,7 +144,7 @@ Sub info()
 	<tr>
 	  <td align="center" class="classtd"><div align="left"><span class="font"><strong>Éè±¸¼ÇÂ¼£º</strong></span></div></td>
 <%
-	sqll="select * from sb_log where ssbm like '%"& rsu("xingming") &"%' or user like '%"& rsu("xingming") &"%' order by datetime"
+	sqll="select * from sb_log where ssbm like '%"& rsu("gh") &"%' or user like '%"& rsu("gh") &"%' order by datetime"
 		 set rsuu=server.createobject("adodb.recordset")
 		 rsuu.open sqll,conn,1,1
 			if rsuu.eof then
