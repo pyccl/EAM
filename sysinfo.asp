@@ -44,7 +44,7 @@
   </tr>
   <tr bgcolor='#EBF2F9'>
     <td height="24"><div align="left">插件调用：</div></td>
-    <td height="24"><div align="left">省市县三级联动：<a href="https://github.com/fengyuanchen/distpicker" title="2.0.8（2023-01-01）" target="_blank">Distpicker</a>；日期选择：<a href="http://www.my97.net/" title="4.8.5 Release（2021-09-18）" target="_blank">My97 DatePicker</a>；页面打印：<a href="http://www.lodop.net/" target="_blank">LODOP</a>；颜色选择：<a href="https://jscolor.com/" title="2.5.1（2022-10-18）" target="_blank">JsColor</a>。</div></td>
+    <td height="24"><div align="left">省市县三级联动：<a href="https://github.com/fengyuanchen/distpicker" title="2.0.8（2023-01-01）" target="_blank">Distpicker</a>；日期选择：<a href="http://www.my97.net/" title="4.8.5 Release（2021-09-18）" target="_blank">My97 DatePicker</a>；页面打印：<a href="http://www.lodop.net/" target="_blank">LODOP</a>；颜色选择：<a href="https://jscolor.com/" title="2.5.2（2023-12-2）" target="_blank">JsColor</a>。</div></td>
   </tr>
 </table>
 </body>

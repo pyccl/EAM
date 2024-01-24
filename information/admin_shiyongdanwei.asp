@@ -4,6 +4,13 @@
 <link href="../images/tab.css" rel="stylesheet" type="text/css">
 <script src="../js/jscolor/jscolor.js"></script>
 <!--#include file="../inc/defaultcolor.asp"-->
+<script type="text/javascript">
+	function setRandomColor() {  
+		var myTextBox = document.getElementById('color');  
+		myTextBox.value = generateRandomColor();
+		myTextBox.style.backgroundColor = myTextBox.value;
+	}  
+</script>
 <%
 On Error Resume next
 response.charset="GB2312"
@@ -57,7 +64,7 @@ response.Redirect "admin_shiyongdanwei.asp"
 response
 end select
 %>
-    
+<body onload="setRandomColor()">
 <table border="0" cellspacing="1" cellpadding="4" bgcolor="#FFFFFF" align="center" width="100%">
   <form name=form2 method=post action=admin_shiyongdanwei.asp>
     <tr>
@@ -96,7 +103,7 @@ rs.open sql,conn, 1, 1
           <input name="s_name" type="text" class="form" id="s_name" size="25">
       </div></td>
 	  <td height="15" class="classtd"><div align="center">
-		  <input name="color" type="text" data-jscolor="" id="color" value='#ABCDEF'>
+		  <input name="color" type="text" data-jscolor="" id="color" class="form">
 	  </div></td>
       <td class="classtd"><div align="center">
           <input name="s_paixu" type="text" class="form" id="s_paixu" onkeyup="value=value.replace(/[^\d\.]/g,'');" value=0 size="3">
@@ -125,7 +132,7 @@ rs.AbsolutePage=pagecount
           <input name="s_name" type="text" class="form" id="s_name" value="<%=trim(rs("y_name"))%>" size="25">
         </div></td>
       <td class="classtd"><div align="center">
-          <input name="color" data-jscolor="" type="text" id="color" value=<%=rs("y_color")%>>
+          <input name="color" type="text" class="form" id="color" value=<%=rs("y_color")%> data-jscolor="">
         </div></td>
       <td class="classtd"><div align="center">
           <input name="s_paixu" type="text" class="form" id="s_paixu" onkeyup="value=value.replace(/[^\d\.]/g,'');" value=<%=rs("y_paixu")%> size="3">
@@ -190,5 +197,6 @@ set rs=Nothing
     <td height="15" colspan="5" class="classtop1">颜色：用于在统计中显示；排序：数值越小越靠上。</td>
   </tr>
 </table>
+</body>
 <%end if
 end if%>

@@ -14,3 +14,13 @@
 		//backgroundColor: 'rgba(51,51,51,1)', controlBorderColor: 'rgba(153,153,153,1)', buttonColor: 'rgba(240,240,240,1)',
 	}
 	</script>
+    <script type="text/javascript">  
+        function generateRandomColor() {  
+            var letters = '0123456789ABCDEF';  
+            var color = '#';  
+            for (var i = 0; i < 6; i++) {  
+                color += letters[Math.floor(Math.random() * 16)];  
+            }  
+            return color;  
+        } 
+    </script>

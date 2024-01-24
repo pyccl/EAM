@@ -4,6 +4,13 @@
 <link href="../images/tab.css" rel="stylesheet" type="text/css">
 <script src="../js/jscolor/jscolor.js"></script>
 <!--#include file="../inc/defaultcolor.asp"-->
+<script type="text/javascript">
+	function setRandomColor() {  
+		var myTextBox = document.getElementById('s_color');  
+		myTextBox.value = generateRandomColor();
+		myTextBox.style.backgroundColor = myTextBox.value;
+	}  
+</script>
 <%
 On Error Resume next
 response.charset="GB2312"
@@ -55,6 +62,7 @@ response.Redirect "admin_bsort.asp"
 response
 end select
 %>
+<body onload="setRandomColor()">
   <table border="0" cellspacing="1" cellpadding="4" bgcolor="#6298E1" align="center" width="100%">
       <%
 set rs=server.CreateObject("adodb.recordset")
@@ -71,6 +79,24 @@ i=rs.recordcount%>
         <td nowrap background="../images/th_bg.gif" height="15" align="center"><strong>排序</strong></td>
         <td nowrap background="../images/th_bg.gif" height="15" align="center"><strong>操作</strong></td>
       </tr>
+      <form name="form2" method="post" action="admin_bsort.asp?action=add">
+        <tr>
+          <td height="15" class="classtd"><div align="center">
+              <input name="s_id" type="text" disabled="disabled" class="form" id="s_id" value="新建" size="5">
+          </div></td>
+          <td height="15" class="classtd"><div align="center">
+              <input name="s_name" type="text" class="form" id="s_name" size="25">
+          </div></td>
+          <td class="classtd"><div align="center">
+            <input name="s_color" type="text" class="form" id="s_color" data-jscolor="">
+          </div></td>
+          <td class="classtd"><div align="center">
+              <input name="s_paixu" type="text" class="form" id="s_paixu" onkeyup="value=value.replace(/[^\d\.]/g,'');" value=0 size="3">
+          </div></td>
+          <td class="classtd"><div align="center">
+              <input name="Submit2" type="submit" class="button" value="添 加">
+          </div></td></tr>
+      </form>
       <%if rs.eof and rs.bof then
 response.write ""
 else
@@ -101,26 +127,9 @@ end if
 rs.close
 set rs=nothing
 %>
-      <form name="form2" method="post" action="admin_bsort.asp?action=add">
-        <tr>
-          <td height="15" class="classtd"><div align="center">
-              <input name="s_id" type="text" disabled="disabled" class="form" id="s_id" value="新建" size="5">
-          </div></td>
-          <td height="15" class="classtd"><div align="center">
-              <input name="s_name" type="text" class="form" id="s_name" size="25">
-          </div></td>
-          <td class="classtd"><div align="center">
-            <input name="s_color" type="text" class="form" id="s_color" value="#ABCDEF" data-jscolor="">
-          </div></td>
-          <td class="classtd"><div align="center">
-              <input name="s_paixu" type="text" class="form" id="s_paixu" onkeyup="value=value.replace(/[^\d\.]/g,'');" value=0 size="3">
-          </div></td>
-          <td class="classtd"><div align="center">
-              <input name="Submit2" type="submit" class="button" value="添 加">
-          </div></td></tr>
-      </form>
         <tr class="classtop1">
           <td height="15" colspan="5" class="classtop1">颜色：用于在统计中显示；排序：数值越小越靠上。</td>
         </tr>
     </table>
+		  </body>
 <%end if%>

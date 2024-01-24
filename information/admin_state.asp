@@ -4,6 +4,13 @@
 <link href="../images/tab.css" rel="stylesheet" type="text/css">
 <script src="../js/jscolor/jscolor.js"></script>
 <!--#include file="../inc/defaultcolor.asp"-->
+<script type="text/javascript">
+	function setRandomColor() {  
+		var myTextBox = document.getElementById('ztys');  
+		myTextBox.value = generateRandomColor();
+		myTextBox.style.backgroundColor = myTextBox.value;
+	}  
+</script>
 <%
 On Error Resume next
 response.charset="GB2312"
@@ -54,6 +61,7 @@ response.Redirect "admin_state.asp"
 response
 end select
 %>
+<body onload="setRandomColor()">
 <table border="0" cellspacing="1" cellpadding="4" bgcolor="#FFFFFF" align="center" width="100%">
     <tr>
       <td class="classtop1" align="center"><B>状态管理</b></td>
@@ -91,7 +99,7 @@ rs.open sql,conn, 1, 1
           <input name="ztm" type="text" class="form" id="ztm" size="20" maxlength="10">
       </div></td>
       <td height="15" class="classtd"><div align="center">
-          <input name="ztys" type="text" class="form" id="ztys" value="#ABCDEF" data-jscolor="">
+          <input name="ztys" type="text" class="form" id="ztys" data-jscolor="">
       </div></td>
       <td class="classtd"><div align="center">
           <input name="s_paixu" type="text" class="form" id="s_paixu" onkeyup="value=value.replace(/[^\d\.]/g,'');" value=0 size="3">
@@ -175,7 +183,8 @@ loop
   <input type="submit" name="go" value="跳转" class=button>
   <% end if %>
       </div></td>
-		<tr class="classtop1"><td colspan="5"><div>颜色：用于在统计中显示；排序：数字越小越靠前。</div></td></tr>
+		<tr class="classtop1"><td colspan="5"><div>颜色：用于在统计中显示；排序：数字越小越靠前。</div>
+				</td></tr>
   </form>
   <%
 End If 
@@ -183,4 +192,5 @@ rs.close
 set rs=Nothing
 %>
 </table>
+</body>
 <%end if%>

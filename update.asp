@@ -271,6 +271,15 @@
         <td align="center" valign="middle" class="td1"><font color="Red">修复</font></td>
         <td class="td1">修复员工重名时候的在员工详情页面中的设备记录不正确的BUG。</td>
       </tr>
+      <tr>
+        <td rowspan="2" align="center" class="td1">2024-1-24</td>
+        <td align="center" valign="middle" class="td1"><font color="Green">更新</font></td>
+        <td class="td1">①更新JsColor插件到2.5.2版本；</td>
+      </tr>
+      <tr>
+        <td align="center" valign="middle" class="td1"><font color="Blue">新增</font></td>
+        <td class="td1">②状态页面、大类页面、公司页面颜色代码添加随机功能。</td>
+      </tr>
 </table>
 
 </body>
