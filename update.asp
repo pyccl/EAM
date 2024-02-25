@@ -37,6 +37,11 @@
         <td align="center" valign="middle" class="td1"><font color="Blue">新增</font></td>
         <td class="td1">②状态页面、大类页面、公司页面颜色代码添加随机功能。</td>
       </tr>
+      <tr>
+        <td align="center" class="td1">2024-2-25</td>
+        <td align="center" valign="middle" class="td1"><font color="Green">更新</font></td>
+        <td class="td1">更新翻页按钮图标。</td>
+      </tr>
 </table>
 
 </body>
