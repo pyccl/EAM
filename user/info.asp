@@ -175,7 +175,7 @@ Sub info()
             loop %>
 	    </div>
         <%if rsuu.pagecount>1 then%>
-        <div align="center"> 页次：<font color="red"><%=epage%></font>/<font color="red"><%=rsuu.pagecount%></font>页，共有<font color="red"><%=rsuu.recordcount%></font>条记录。 <a href="info.asp?id=<%=rsu("id")%>&page=1">首页</a>&nbsp;<a href="info.asp?id=<%=rsu("id")%>&page=<%=epage-1%>">前一页</a>&nbsp;<a href="info.asp?id=<%=rsu("id")%>&page=<%=epage+1%>">后一页</a>&nbsp;<a href="info.asp?id=<%=rsu("id")%>&page=<%=rsuu.pagecount%>">末页</a> </div>
+        <div align="center"> 页次：<font color="red"><%=epage%></font>/<font color="red"><%=rsuu.pagecount%></font>页，共有<font color="red"><%=rsuu.recordcount%></font>条记录。 <a href="info.asp?id=<%=rsu("id")%>&page=1"><img src="../images/frist.png"></a><a href="info.asp?id=<%=rsu("id")%>&page=<%=epage-1%>"><img src="../images/previous.png"></a><a href="info.asp?id=<%=rsu("id")%>&page=<%=epage+1%>"><img src="../images/next.png"></a><a href="info.asp?id=<%=rsu("id")%>&page=<%=rsuu.pagecount%>"><img src="../images/last.png"></a> </div>
         <%end if
 		   end if%>
       </td>

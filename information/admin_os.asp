@@ -142,13 +142,13 @@ loop
         条开始。
   <% if rs.pagecount > 1 then
 			 if pagecount=1 and rs.pagecount<>pagecount and rs.pagecount<>0 then%>
-  <a href="?page=<%=cstr(pagecount+1)%>&gjc=<%=gjc%>"><img src="../images/next.gif"></a><a href="?page=<%=rs.pagecount%>&gjc=<%=gjc%>"><img src="../images/last.gif"></a>
+  <a href="?page=<%=cstr(pagecount+1)%>&gjc=<%=gjc%>"><img src="../images/next.png"></a><a href="?page=<%=rs.pagecount%>&gjc=<%=gjc%>"><img src="../images/last.png"></a>
   <% end if %>
   <% if rs.pagecount>1 and rs.pagecount=pagecount then %>
-  <a href="?page=1&gjc=<%=gjc%>"><img src="../images/frist.gif"></a><a href="?page=<%=cstr(pagecount-1)%>&gjc=<%=gjc%>"><img src="../images/previous.gif"></a>
+  <a href="?page=1&gjc=<%=gjc%>"><img src="../images/frist.png"></a><a href="?page=<%=cstr(pagecount-1)%>&gjc=<%=gjc%>"><img src="../images/previous.png"></a>
   <%end if%>
   <% if pagecount<>1 and rs.pagecount<>pagecount then%>
-  <a href="?page=1&gjc=<%=gjc%>"><img src="../images/frist.gif"></a><a href="?page=<%=cstr(pagecount-1)%>&gjc=<%=gjc%>"><img src="../images/previous.gif"></a><a href="?page=<%=cstr(pagecount+1)%>&gjc=<%=gjc%>"><img src="../images/next.gif"></a><a href="?page=<%=rs.pagecount%>&gjc=<%=gjc%>"><img src="../images/last.gif"></a>
+  <a href="?page=1&gjc=<%=gjc%>"><img src="../images/frist.png"></a><a href="?page=<%=cstr(pagecount-1)%>&gjc=<%=gjc%>"><img src="../images/previous.png"></a><a href="?page=<%=cstr(pagecount+1)%>&gjc=<%=gjc%>"><img src="../images/next.png"></a><a href="?page=<%=rs.pagecount%>&gjc=<%=gjc%>"><img src="../images/last.png"></a>
   <% end if%>
   &nbsp;直接到第
   <%if rs.pagecount>15 then %>

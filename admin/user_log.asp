@@ -31,7 +31,7 @@ else%>
 <body>
 <table width="100%" border="0" cellspacing="1" cellpadding="4" bgcolor="#6298E1">
   <tr>
-    <th height="24" colspan="7"><strong>操作日志</strong>
+    <th height="24" colspan="7" class="classtop">操作日志
       <select name="anclassid" onChange="var jmpURL=this.options[this.selectedIndex].value ; if(jmpURL!='') {window.location=jmpURL;} else {this.selectedIndex=0 ;}" >
         <option selected>--快速跳转--</option>
         <option value="?logtype=all">所有记录</option>
@@ -67,11 +67,11 @@ else%>
       <td nowrap background="../images/th_bg.gif"><div align="center"><strong>ID</strong></div></td>
       <td nowrap background="../images/th_bg.gif"><div align="center"><strong>管理用户名</strong></div></td>
       <td nowrap background="../images/th_bg.gif"><div align="center"><strong>操作类型</strong></div></td>
-      <td nowrap background="../images/th_bg.gif"><div align="center"><strong>操作日志</strong></div></td>
+      <td nowrap background="../images/th_bg.gif"><div align="center"><strong>操作内容</strong></div></td>
       <td nowrap background="../images/th_bg.gif"><div align="center"><strong>操作时间</strong></div></td>
       <td nowrap background="../images/th_bg.gif"><div align="center"><strong>操作IP</strong></div></td>
       <% if Instr(session("juese"),"|304,")<>0 then%>
-      <td nowrap background="../images/th_bg.gif"><div align="center"><a href="javascript:void(0);" onclick="checkAll()">全</a>\<a href="javascript:void(0);" onclick="uncheckAll()">否</a></div></td>
+      <td nowrap background="../images/th_bg.gif"><div align="center" ><a href="javascript:void(0);" onclick="checkAll()">全选</a>\<a href="javascript:void(0);" onclick="uncheckAll()">否</a></div></td>
       <%end if%>
     </tr>
     <%
@@ -129,13 +129,13 @@ end if
           条开始。
           
           <% if pagecount=1 and rs.pagecount<>pagecount and rs.pagecount<>0 then%>
-          <a href="?logtype=<%=logtype%>&page=<%=cstr(pagecount+1)%>"><img src="../images/next.gif"></a><a href="?logtype=<%=logtype%>&page=<%=rs.pagecount%>"><img src="../images/last.gif"></a>
+          <a href="?logtype=<%=logtype%>&page=<%=cstr(pagecount+1)%>"><img src="../images/next.png"></a><a href="?logtype=<%=logtype%>&page=<%=rs.pagecount%>"><img src="../images/last.png"></a>
           <% end if %>
           <% if rs.pagecount>1 and rs.pagecount=pagecount then %>
-          <a href="?logtype=<%=logtype%>&page=1"><img src="../images/frist.gif"></a><a href="?logtype=<%=logtype%>&page=<%=cstr(pagecount-1)%>"><img src="../images/previous.gif"></a>
+          <a href="?logtype=<%=logtype%>&page=1"><img src="../images/frist.png"></a><a href="?logtype=<%=logtype%>&page=<%=cstr(pagecount-1)%>"><img src="../images/previous.png"></a>
           <%end if%>
           <% if pagecount<>1 and rs.pagecount<>pagecount then%>
-          <a href="?logtype=<%=logtype%>&page=1"><img src="../images/frist.gif"></a><a href="?logtype=<%=logtype%>&page=<%=cstr(pagecount-1)%>"><img src="../images/previous.gif"></a><a href="?logtype=<%=logtype%>&page=<%=cstr(pagecount+1)%>"><img src="../images/next.gif"></a><a href="?logtype=<%=logtype%>&page=<%=rs.pagecount%>"><img src="../images/last.gif"></a>
+          <a href="?logtype=<%=logtype%>&page=1"><img src="../images/frist.png"></a><a href="?logtype=<%=logtype%>&page=<%=cstr(pagecount-1)%>"><img src="../images/previous.png"></a><a href="?logtype=<%=logtype%>&page=<%=cstr(pagecount+1)%>"><img src="../images/next.png"></a><a href="?logtype=<%=logtype%>&page=<%=rs.pagecount%>"><img src="../images/last.png"></a>
           <% end if%>
 		<%if rs.pagecount>1 then%>
            &nbsp;直接到第
@@ -150,7 +150,7 @@ end if
           <%end if%>
           页
           <input type="submit" name="go" value="跳转" class="button">
-		<%end if%>
+          <%end if%>
         </div></td>
     </tr>
   </form>

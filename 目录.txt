@@ -52,7 +52,7 @@
 ©¦  ©¦  default_26.gif
 ©¦  ©¦  down_bg.gif
 ©¦  ©¦  excel.jpg
-©¦  ©¦  frist.gif
+©¦  ©¦  frist.png
 ©¦  ©¦  go.gif
 ©¦  ©¦  gongan.png
 ©¦  ©¦  help.gif
@@ -62,7 +62,7 @@
 ©¦  ©¦  index_bg.jpg
 ©¦  ©¦  input_bg.gif
 ©¦  ©¦  jt.gif
-©¦  ©¦  last.gif
+©¦  ©¦  last.png
 ©¦  ©¦  left_bg.gif
 ©¦  ©¦  left_sort.gif
 ©¦  ©¦  list.gif
@@ -91,11 +91,11 @@
 ©¦  ©¦  main_06.gif
 ©¦  ©¦  main_07.gif
 ©¦  ©¦  main_08.gif
-©¦  ©¦  next.gif
+©¦  ©¦  next.png
 ©¦  ©¦  noimg.gif
 ©¦  ©¦  noimg.png
 ©¦  ©¦  note.gif
-©¦  ©¦  previous.gif
+©¦  ©¦  previous.png
 ©¦  ©¦  quit.gif
 ©¦  ©¦  spacer.gif
 ©¦  ©¦  sy.gif

@@ -73,15 +73,13 @@ Else
     <tr bgcolor='#EBF2F9' onMouseOver = "this.style.backgroundColor = '#FFFFFF'" onMouseOut = "this.style.backgroundColor = ''">
       <td align="center"><%=rs("id")%></td>
       <td align="center"><%=rs("mingcheng")%></td>
-    <td align="center" style="word-wrap:break-word;">
-		<%
+      <td align="center" style="word-wrap:break-word;"><%
 		if trim(rs("quanxian"))="" then
 			response.write "<font color=red>暂无任何权限！</font>"
 		else
 			response.write rs("quanxian")
 		end if
-		%>
-	</td>
+		%></td>
       <td align="center"><%=rs("datetime")%></td>
       <td align="center"><%
 			set rs2=server.CreateObject("adodb.recordset")
@@ -93,14 +91,13 @@ Else
 				response.write "<font color = blue><strong> " & rs2.recordcount & " </strong></font>"
 			end if
 		%></td>
-      <td align="center">
-		  <%if rs("id")<>1 then %> 
-		  	<input class=button type="button" value="修改" onclick="javascript:window.location.href='admin_juese.asp?Result=Modify&ID=<%=rs("ID")%>&page=<%=pagecount%>'" />
-		  <% else
+      <td align="center"><%if rs("id")<>1 then %>
+        <input class=button type="button" value="修改" onclick="javascript:window.location.href='admin_juese.asp?Result=Modify&ID=<%=rs("ID")%>&page=<%=pagecount%>'" />
+        <% else
 			 	response.write "<font color=red>无权操作！</font>"
 			 end if%>
         <%if rs("id") <> 1 and rs2.recordcount = 0 then %>
-        	<input name="Submit2" type="button" class="button" onclick="{if(confirm('请确认删除名称为“<%=rs("mingcheng")%>”的角色么?')){location.href='juese.asp?action=del&amp;id=<%=rs("id")%>&amp;mingcheng=<%=rs("mingcheng")%>&amp;page=<%=request("page")%>';} return false;}" value="删除"/>
+        <input name="Submit2" type="button" class="button" onclick="{if(confirm('请确认删除名称为“<%=rs("mingcheng")%>”的角色么?')){location.href='juese.asp?action=del&amp;id=<%=rs("id")%>&amp;mingcheng=<%=rs("mingcheng")%>&amp;page=<%=request("page")%>';} return false;}" value="删除"/>
         <% end if
 			rs2.close
 			set rs2=Nothing %></td>
@@ -124,13 +121,13 @@ Else
 			  %>
           条开始。
           <% if pagecount=1 and rs.pagecount<>pagecount and rs.pagecount<>0 then%>
-          <a href="?page=<%=cstr(pagecount+1)%>"><img src="../images/next.gif"></a><a href="?page=<%=rs.pagecount%>"><img src="../images/last.gif"></a>
+          <a href="?page=<%=cstr(pagecount+1)%>"><img src="../images/next.png"></a><a href="?page=<%=rs.pagecount%>"><img src="../images/last.png"></a>
           <% end if %>
           <% if rs.pagecount>1 and rs.pagecount=pagecount then %>
-          <a href="?page=1"><img src="../images/frist.gif"></a><a href="?page=<%=cstr(pagecount-1)%>"><img src="../images/previous.gif"></a>
+          <a href="?page=1"><img src="../images/frist.png"></a><a href="?page=<%=cstr(pagecount-1)%>"><img src="../images/previous.png"></a>
           <%end if%>
           <% if pagecount<>1 and rs.pagecount<>pagecount then%>
-          <a href="?page=1"><img src="../images/frist.gif"></a><a href="?page=<%=cstr(pagecount-1)%>"><img src="../images/previous.gif"></a> <a href="?page=<%=cstr(pagecount+1)%>"><img src="../images/next.gif"></a><a href="?page=<%=rs.pagecount%>"><img src="../images/last.gif"></a>
+          <a href="?page=1"><img src="../images/frist.png"></a><a href="?page=<%=cstr(pagecount-1)%>"><img src="../images/previous.png"></a> <a href="?page=<%=cstr(pagecount+1)%>"><img src="../images/next.png"></a><a href="?page=<%=rs.pagecount%>"><img src="../images/last.png"></a>
           <% end if
 			if rs.pagecount>1 then%>
           &nbsp;直接到第
@@ -150,13 +147,15 @@ Else
     </tr>
   </form>
   <%End If%>
-        <tr class="classfooter">
-          <td colspan="6"><div>当前执行SQL语句：<font color="red"><%response.write sql%></font></div></td>
-        </tr>
-	  <% 
+  <tr class="classfooter">
+    <td colspan="6"><div>当前执行SQL语句：<font color="red">
+        <%response.write sql%>
+        </font></div></td>
+  </tr>
+  <% 
 		rs.close
 		set rs=Nothing
-		%>
+	%>
 </table>
 <% end if %>
 </body>

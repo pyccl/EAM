@@ -18,7 +18,7 @@ else %>
 <table width="100%" border="0" cellspacing="1" cellpadding="4" bgcolor="#6298E1">
   <form action ="save_user.asp?action=add" method="post" name="addFrm">
     <tr class="classtop1">
-      <th height="24" colspan="10"><B><%=session("companyname")%>系统账户管理</b></th>
+      <th height="24" colspan="10" class="classtop"><%=session("companyname")%>-系统账户管理</th>
     </tr>
     <tr class="classtop1">
       <td nowrap background="../images/th_bg.gif" height="24"><div align="center"><strong>ID</strong></div></td>
@@ -118,13 +118,13 @@ loop
           %>
           条开始。
           <% if pagecount=1 and rs.pagecount<>pagecount and rs.pagecount<>0 then%>
-          <a href="?page=<%=cstr(pagecount+1)%>"><img src="../images/next.gif"></a><a href="?page=<%=rs.pagecount%>"><img src="../images/last.gif"></a>
+          <a href="?page=<%=cstr(pagecount+1)%>"><img src="../images/next.png"></a><a href="?page=<%=rs.pagecount%>"><img src="../images/last.png"></a>
           <% end if %>
           <% if rs.pagecount>1 and rs.pagecount=pagecount then %>
-          <a href="?page=1"><img src="../images/frist.gif"></a><a href="?page=<%=cstr(pagecount-1)%>"><img src="../images/previous.gif"></a>
+          <a href="?page=1"><img src="../images/frist.png"></a><a href="?page=<%=cstr(pagecount-1)%>"><img src="../images/previous.png"></a>
           <%end if%>
           <% if pagecount<>1 and rs.pagecount<>pagecount then%>
-          <a href="?page=1"><img src="../images/frist.gif"></a><a href="?page=<%=cstr(pagecount-1)%>"><img src="../images/previous.gif"></a> <a href="?page=<%=cstr(pagecount+1)%>"><img src="../images/next.gif"></a><a href="?page=<%=rs.pagecount%>"><img src="../images/last.gif"></a>
+          <a href="?page=1"><img src="../images/frist.png"></a><a href="?page=<%=cstr(pagecount-1)%>"><img src="../images/previous.png"></a> <a href="?page=<%=cstr(pagecount+1)%>"><img src="../images/next.png"></a><a href="?page=<%=rs.pagecount%>"><img src="../images/last.png"></a>
           <% end if
 			 if rs.pagecount>1 then%>
           &nbsp;直接到第

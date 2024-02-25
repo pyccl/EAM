@@ -227,13 +227,13 @@ if j>=rs.pagesize then exit do
                 Ìõ¿ªÊ¼¡£
                 
                 <% if pagecount=1 and rs.pagecount<>pagecount and rs.pagecount<>0 then%>
-                <a href="?<%=fyorder%>&<%=gourl%>&page=<%=cstr(pagecount+1)%>"><img src="../images/next.gif"></a><a href="?<%=fyorder%>&<%=gourl%>&page=<%=rs.pagecount%>"><img src="../images/last.gif"></a>
+                <a href="?<%=fyorder%>&<%=gourl%>&page=<%=cstr(pagecount+1)%>"><img src="../images/next.png"></a><a href="?<%=fyorder%>&<%=gourl%>&page=<%=rs.pagecount%>"><img src="../images/last.png"></a>
                 <% end if %>
                 <% if rs.pagecount>1 and rs.pagecount=pagecount then %>
-                <a href="?<%=fyorder%>&<%=gourl%>&page=1"><img src="../images/frist.gif"></a><a href="?<%=fyorder%>&<%=gourl%>&page=<%=cstr(pagecount-1)%>"><img src="../images/previous.gif"></a>
+                <a href="?<%=fyorder%>&<%=gourl%>&page=1"><img src="../images/frist.png"></a><a href="?<%=fyorder%>&<%=gourl%>&page=<%=cstr(pagecount-1)%>"><img src="../images/previous.png"></a>
                 <%end if%>
                 <% if pagecount<>1 and rs.pagecount<>pagecount then%>
-                <a href="?<%=fyorder%>&<%=gourl%>&page=1"><img src="../images/frist.gif"></a><a href="?<%=fyorder%>&<%=gourl%>&page=<%=cstr(pagecount-1)%>"><img src="../images/previous.gif"></a><a href="?<%=fyorder%>&<%=gourl%>&page=<%=cstr(pagecount+1)%>"><img src="../images/next.gif"></a><a href="?<%=fyorder%>&<%=gourl%>&page=<%=rs.pagecount%>"><img src="../images/last.gif"></a>
+                <a href="?<%=fyorder%>&<%=gourl%>&page=1"><img src="../images/frist.png"></a><a href="?<%=fyorder%>&<%=gourl%>&page=<%=cstr(pagecount-1)%>"><img src="../images/previous.png"></a><a href="?<%=fyorder%>&<%=gourl%>&page=<%=cstr(pagecount+1)%>"><img src="../images/next.png"></a><a href="?<%=fyorder%>&<%=gourl%>&page=<%=rs.pagecount%>"><img src="../images/last.png"></a>
                 <% end if%>
                 <% end if%>
                 <%if rs.pagecount>1 then%>
