@@ -42,6 +42,11 @@
         <td align="center" valign="middle" class="td1"><font color="Green">更新</font></td>
         <td class="td1">更新翻页按钮图标。</td>
       </tr>
+      <tr>
+        <td align="center" class="td1">2024-3-3</td>
+        <td align="center" valign="middle" class="td1"><font color="Green">更新</font></td>
+        <td class="td1">将账户页面、盘点页面中的状态显示调整为图标显示。</td>
+      </tr>
 </table>
 
 </body>

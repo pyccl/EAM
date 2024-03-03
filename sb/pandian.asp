@@ -198,13 +198,13 @@ else
 				<td align="center"><%
 			select case rs("pdzt")
 			case 3
-				response.write "<B><font color=red>ÅÌ¿÷</font></b>"
+				response.write "<img src=../images/x.png>"
 			case 2
-				response.write "<B><font color=Blue>ÅÌÓ¯</font></b>"
+				response.write "<img src=../images/v.png><img src=../images/v.png>"
 			case 1
-				response.write "<B>Õı³£</b>"
+				response.write "<img src=../images/v.png>"
 			case else
-				response.write "<font color=red>Î´ÅÌµã</font>"
+				response.write "<img src=../images/what.png>"
 			end select
 				%></td>
 				<td align="center">

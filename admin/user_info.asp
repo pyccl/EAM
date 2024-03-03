@@ -71,7 +71,7 @@ rs.AbsolutePage=pagecount
 				end if %>
 		</div>
 	  </td>
-      <td><div align="center"><%if rs("working")=1 then response.write "<font color=blue>∆Ù”√</font>" else response.write "<font color=red>Õ£”√</font>" end if%></div></td>
+      <td><div align="center"><%if rs("working")=1 then response.write "<image src=../images/v.png>" else response.write "<image src=../images/x.png>" end if%></div></td>
       <td><div align="center">
 			<% 
 			if isnull(rs("juese")) then
