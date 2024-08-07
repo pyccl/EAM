@@ -12,7 +12,7 @@ function ale()
  
 {
 alert('÷ÿ÷√≥…π¶!');
-window.location.replace('../setting.asp');
+window.location.replace('../admin/setting.asp');
 }
 </script>
 <%

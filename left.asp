@@ -17,7 +17,8 @@
             <tr>
               <td style="border-right:solid 1px #404040;"><table width="195" height="100%" border="0" cellpadding="0" cellspacing="0">
                   <tr>
-                    <td valign="top"  style="background:url(images/left_bg.gif) repeat-x top; border-right:solid 1px #404040;"><table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <td valign="top"  style="background:url(images/left_bg.gif) repeat-x top; border-right:solid 1px #404040;">
+						<table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
                         <%if id="zc" then
 							if Instr(session("juese"),"|101,")<>0 then %>
                         <tr>
@@ -100,6 +101,36 @@
                         </tr>
                         <% end if
 						   end if%>
+						<%if id="gj" then %>
+                        <tr>
+                          <td style="padding-bottom:3px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td width="3" height="28"><img src="images/default_21.gif" width="3" height="28"></td>
+                                <td background="images/default_23.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                      <td width="17%"><div align="right"><img src="images/list.gif" width="10" height="10"></div></td>
+                                      <td width="83%" style="height:1;font-size:12pt; color:#ffffff;filter:glow(color=#215970,strength=1); padding-left:5px;"><a href="tools/calculator/index.html" target=mainframe>计算器</a></td>
+                                    </tr>
+                                  </table></td>
+                                <td width="3"><img src="images/default_24.gif" width="3" height="28"></td>
+                              </tr>
+                            </table></td>
+                        </tr>
+                        <tr>
+                          <td style="padding-bottom:3px;"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td width="3" height="28"><img src="images/default_21.gif" width="3" height="28"></td>
+                                <td background="images/default_23.gif"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                      <td width="17%"><div align="right"><img src="images/list.gif" width="10" height="10"></div></td>
+                                      <td width="83%" style="height:1;font-size:12pt; color:#ffffff;filter:glow(color=#215970,strength=1); padding-left:5px;"><a href="tools/calendar/index.html" target=mainframe>万年历</a></td>
+                                    </tr>
+                                  </table></td>
+                                <td width="3"><img src="images/default_24.gif" width="3" height="28"></td>
+                              </tr>
+                            </table></td>
+                        </tr>
+                        <% end if %>
                         <%if id="xx" then
 							if Instr(session("juese"),"|401,")<>0 then %>
                         <tr>

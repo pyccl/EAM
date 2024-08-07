@@ -1,7 +1,7 @@
 <!--#include file="../inc/conn.asp"-->
 <!--#include file="../inc/mysession.asp" -->
 <%if Instr(session("juese"),"|306,")=0 then %>
-  <!--#include file="../inc/quanxian.asp"-->
+<!--#include file="../inc/quanxian.asp"-->
 <%
   response.end 
 else

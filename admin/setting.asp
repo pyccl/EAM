@@ -2,8 +2,8 @@
 <!--#include file="../inc/conn.asp"-->
 <!--#include file="../inc/mysession.asp" -->
 <%if Instr(session("juese"),"|300,")=0 then %>
-   <!--#include file="../inc/quanxian.asp"-->
-  <%
+<!--#include file="../inc/quanxian.asp"-->
+<%
   response.end
 else%>
 <html>
@@ -14,7 +14,7 @@ else%>
 <link href="../images/tab.css" rel="stylesheet" type="text/css">
 </head>
 <link href="../css.css" rel="stylesheet" type="text/css">
-<script language="javascript" type="text/javascript" src="../js/datepicker/WdatePicker.js"></script>
+<script language="javascript" type="text/javascript" src="../js/datepicker/WdatePicker.js"></script> 
 <script language="javascript">
 	
 function checkform()
@@ -131,10 +131,12 @@ return false;
       <td align="center" class="classtd"><div align="left"><font color="#ff0033"> &nbsp; </font><strong>盘点设置：</strong></div></td>
       <td height="25" align="center" class="classtd"><div align="left">&nbsp;&nbsp;盘点开关：</div></td>
       <td height="25" align="center" class="classtd"><span class="forumrow"> </span>
-        <div align="left"><label><span class="forumrow">
-          <input name="pdkg" type="checkbox" style="HEIGHT: 15px;WIDTH: 15px;" <%if rs("pd") then response.write ("checked")%>>
-          </span>选中开启；未选中关闭</label> &nbsp;&nbsp;
-          <input type="button" class=button  size=3 value='重置盘点状态' name=Submit5  onClick="window.location.href='sb/cz_pdzt.asp?zt=cz';return confirm('确定重置盘点状态?');">
+        <div align="left">
+          <label><span class="forumrow">
+            <input name="pdkg" type="checkbox" style="HEIGHT: 15px;WIDTH: 15px;" <%if rs("pd") then response.write ("checked")%>>
+            </span>选中开启；未选中关闭</label>
+          &nbsp;&nbsp;
+          <input type="button" class=button  size=3 value='重置盘点状态' name=Submit5  onClick="window.location.href='../sb/cz_pdzt.asp?zt=cz';return confirm('确定重置盘点状态?');">
         </div></td>
     </tr>
     <tr>
@@ -172,26 +174,25 @@ return false;
     <tr>
       <td rowspan="2" align="center" class="classtd"><div align="left"><font color="#ff0033"> &nbsp; </font><strong>其他设置：</strong></div></td>
       <td height="25" align="center" class="classtd"><div align="left">&nbsp;&nbsp;登录页自动黑白**：</div></td>
-      <td height="25" align="center" class="classtd"><div align="left"><label><span class="forumrow">
-        <input name="sfhb" type="checkbox" style="HEIGHT: 15px;WIDTH: 15px;" <%if rs("sfhb") then response.write ("checked")%>>
-        </span>选中开启；未选中关闭</label>
-        <font color="red">开启后，需要设置起止时间，否则不起作用。</font>
-      </div></td>
+      <td height="25" align="center" class="classtd"><div align="left">
+          <label><span class="forumrow">
+            <input name="sfhb" type="checkbox" style="HEIGHT: 15px;WIDTH: 15px;" <%if rs("sfhb") then response.write ("checked")%>>
+            </span>选中开启；未选中关闭</label>
+          <font color="red">开启后，需要设置起止时间，否则不起作用。</font> </div></td>
     </tr>
     <tr>
-	<td height="25" align="center" class="classtd"><div align="left">&nbsp;&nbsp;自动黑白时间：</div></td>
-	<td height="25" align="center" class="classtd"><div align="left">
-	  <input name="kssj" id="d4311" class="form" type="text" size="20" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" value="<%=rs("kssj")%>"/>
--
-<input name="jssj" type="text" class="form" id="d4312" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'d4311\')}'})" value="<%=rs("jssj")%>" size="20"/>
-开始时间-结束时间
-	</div></td>
+      <td height="25" align="center" class="classtd"><div align="left">&nbsp;&nbsp;自动黑白时间：</div></td>
+      <td height="25" align="center" class="classtd"><div align="left">
+          <input name="kssj" id="d4311" class="form" type="text" size="20" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" value="<%=rs("kssj")%>"/>
+          -
+          <input name="jssj" type="text" class="form" id="d4312" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'d4311\')}'})" value="<%=rs("jssj")%>" size="20"/>
+          开始时间-结束时间 </div></td>
     </tr>
     <tr>
       <td height="25" colspan="3" align="center" class="classtd"><input name="提交" type="submit" class="button" id="提交"  value="修改" /></td>
     </tr>
     <tr>
-      <td height="25" colspan="3" class="classfooter">注意：*为必填项；**为重新登录后生效。</td>
+      <td height="25" colspan="3" class="classfooter"><font color="red">注意：*为必填项；**为重新登录后生效。</font></td>
     </tr>
   </form>
 </table>

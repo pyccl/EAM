@@ -187,7 +187,7 @@ rs2.open sql,conn,1,1
     <tr class="classtd">
       <td height="25" colspan="5" align="left">
 		<% 
-			response.write "<div title=" & mid(kn,2) & ">可能未添加的员工（鼠标悬停查看具体）：" & left(mid(kn,2),50)
+		   response.write "<div title=" & mid(kn,2) & ">可能未添加的员工<font color=red>（鼠标悬停查看具体）</font>：" & left(mid(kn,2),50)
 			if len(kn)>50 then response.write "……"
 			response.write "</div>"
 		else

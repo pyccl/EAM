@@ -1,160 +1,93 @@
-\--------------------------------------------根目录
-│  asset.asp--------------------------------二维码详情页面
-│  css.css----------------------------------系统css代码
-│  count.asp--------------------------------统计页面
-│  default.asp------------------------------系统主页
-│  down.asp---------------------------------系统下方状态栏（最下方）
-│  favicon.ico------------------------------系统favicon图标（网页标题栏显示）
-│  help.asp---------------------------------帮助页面
-│  left.asp---------------------------------系统左侧导航
-│  login.asp--------------------------------系统登录界面
-│  right.asp--------------------------------右侧框架页面
-│  serverinfo.asp---------------------------服务器信息页面
-│  setting.asp------------------------------系统设置页面
-│  setting_save.asp-------------------------系统设置保存页面
-│  sysinfo.asp------------------------------系统信息页面
-│  tab.asp----------------------------------系统首页登录后右侧页面
-│  top.asp----------------------------------系统界面顶部界面
-│  update.asp-------------------------------系统更新日志
-│  userinfo.asp-----------------------------账户信息页面
-│  目录.txt---------------------------------系统目录介绍页面（帮助页面下）
+│  asset.asp
+│  count.asp
+│  css.css
+│  default.asp
+│  down.asp
+│  favicon.ico
+│  help.asp
+│  help_sys.asp
+│  left.asp
+│  login.asp
+│  right.asp
+│  serverinfo.asp
+│  sysinfo.asp
+│  tab.asp
+│  top.asp
+│  update.asp
+│  userinfo.asp
 │  更新日志.txt
+│  目录.txt
 │  说明.txt
-│
-├─db----------------------------------------数据库目录
-│      dnsb.mdb------------------------------数据库文件
-│
-├─images------------------------------------图片目录
-│  │  add.png
-│  │  admin_bg_1.gif
-│  │  admin_bg_2.gif
-│  │  admin_bg_3.gif
-│  │  asset_logo4.gif
-│  │  asset_logo4.jpg
-│  │  bb.gif
-│  │  botbg.gif
-│  │  bz.gif
-│  │  date.gif
-│  │  default.css
-│  │  default_01.gif
-│  │  default_02.gif
-│  │  default_04.gif
-│  │  default_06.gif
-│  │  default_08.gif
-│  │  default_10.gif
-│  │  default_12.gif
-│  │  default_13.gif
-│  │  default_17.gif
-│  │  default_19.gif
-│  │  default_21.gif
-│  │  default_23.gif
-│  │  default_24.gif
-│  │  default_26.gif
-│  │  down_bg.gif
-│  │  excel.jpg
-│  │  frist.png
-│  │  go.gif
-│  │  gongan.png
-│  │  help.gif
-│  │  home.gif
-│  │  img.png
-│  │  index_bg.gif
-│  │  index_bg.jpg
-│  │  input_bg.gif
-│  │  jt.gif
-│  │  last.png
-│  │  left_bg.gif
-│  │  left_sort.gif
-│  │  list.gif
-│  │  login.css
-│  │  login_01.gif
-│  │  login_02.gif
-│  │  login_04.gif
-│  │  login_07.gif
-│  │  login_08.gif
-│  │  login_09.gif
-│  │  login_11.gif
-│  │  login_12.gif
-│  │  login_13.gif
-│  │  login_14.gif
-│  │  login_15.gif
-│  │  login_19.gif
-│  │  login_20.gif
-│  │  login_21.gif
-│  │  login_22.gif
-│  │  login_23.gif
-│  │  login_26.gif
-│  │  login_26_1.gif
-│  │  login_29.gif
-│  │  mail.gif
-│  │  main_05.gif
-│  │  main_06.gif
-│  │  main_07.gif
-│  │  main_08.gif
-│  │  next.png
-│  │  noimg.gif
-│  │  noimg.png
-│  │  note.gif
-│  │  previous.png
-│  │  quit.gif
-│  │  spacer.gif
-│  │  sy.gif
-│  │  tab.css
-│  │  table.gif
-│  │  th_bg.gif
-│  │  user.gif
-│  │
-│  └─img------------------------------------资产、员工图片目录
-│     └─2022--------------------------------年
-│         └─12------------------------------月
-│
-├─inc--------------------------------------外接代码
-│      360_safe3.asp---------------------360防注入安全代码
-│      code.asp-----------------------------登录界面验证码
-│      defaultcolor.asp---------------------页面中选择颜色的快捷选择颜色代码
-│      displaytip.asp-----------------------鼠标移动的浮动窗口代码
-│      IDcard.asp---------------------------身份证号码验证
-│      quanxian.asp-------------------------页面无权限时的提示代码
-│      conn.asp---------------------------------数据库连接语句、防注入语句
-│      const.asp--------------------------------系统版本号
-│     md5.asp----------------------------------账户密码MD5验证
-│      mysession.asp-------------------------页面中判断是否登录
-│      mysession_default.asp--------------主页页面中判断是否登录
-│
-├─information------------------------------信息管理界面
-│      admin_bsort.asp----------------------大类管理页面
-│      admin_department.asp-----------------部门管理页面
-│      admin_os.asp-------------------------操作系统管理页面
-│      admin_shiyongdanwei.asp--------------公司管理页面
-│      admin_sort.asp-----------------------小类管理页面
-│      admin_state.asp----------------------状态管理页面
-│
-├─js---------------------------------------JS脚本目录
-│  │  check.js-----------------------------多选按钮全选、反选等判断
-│  │
-│  ├─address------------------------------省、市、县三级地址联动选择插件
-│  │  │
-│  │  └─distpicker.js
-│  │        jquery.slim.min.js
-│  │        main.js
-│  │
-│  ├─DatePicker---------------------------日期选择插件
+│  
+├─admin
+│  │  add_user.asp
+│  │  admin_juese.asp
+│  │  data.asp
+│  │  datainit.asp
+│  │  datainit_submit.asp
+│  │  del_user.asp
+│  │  juese.asp
+│  │  save_user.asp
+│  │  setting.asp
+│  │  setting_save.asp
+│  │  user_info.asp
+│  │  user_log.asp
+│  │  xg_user.asp
+│  │  
+│  └─Databackup
+├─db
+│      dnsb.mdb
+│      
+├─images
+│  │  
+│  └─img
+├─inc
+│      360_safe3.asp
+│      code.asp
+│      conn.asp
+│      const.asp
+│      defaultcolor.asp
+│      displaytip.asp
+│      function.asp
+│      IDcard.asp
+│      md5.asp
+│      mysession.asp
+│      mysession_default.asp
+│      quanxian.asp
+│      
+├─information
+│      admin_bsort.asp
+│      admin_department.asp
+│      admin_os.asp
+│      admin_shiyongdanwei.asp
+│      admin_sort.asp
+│      admin_state.asp
+│      
+├─js
+│  │  check.js
+│  │  
+│  ├─address
+│  │      distpicker.js
+│  │      jquery.slim.min.js
+│  │      main.js
+│  │      
+│  ├─DatePicker
 │  │  │  calendar.js
 │  │  │  WdatePicker.js
-│  │  │
+│  │  │  
 │  │  ├─lang
 │  │  │      en.js
 │  │  │      zh-cn.js
 │  │  │      zh-tw.js
-│  │  │
+│  │  │      
 │  │  └─skin
 │  │      │  datePicker.gif
 │  │      │  WdatePicker.css
-│  │      │
+│  │      │  
 │  │      ├─default
 │  │      │      datepicker.css
 │  │      │      img.gif
-│  │      │
+│  │      │      
 │  │      ├─ext
 │  │      │      datepicker.css
 │  │      │      dateselect.gif
@@ -165,85 +98,74 @@
 │  │      │      left-btn2.gif
 │  │      │      right-btn.gif
 │  │      │      right-btn2.gif
-│  │      │
+│  │      │      
 │  │      └─whyGreen
 │  │              bg.jpg
 │  │              datepicker.css
 │  │              img.gif
-│  │
-│  ├─jscolor------------------------------颜色选择插件
+│  │              
+│  ├─jscolor
 │  │      jscolor.js
-│  │
-│  ├─Lodop--------------------------------页面打印插件
+│  │      
+│  ├─Lodop
 │  │      CLodop_Setup_for_Win32NT.exe
 │  │      install_lodop32.exe
 │  │      install_lodop64.exe
 │  │      LodopFuncs.js
-│  └─upload-------------------------------文件上传插件
+│  │      
+│  ├─qrcode
+│  │      jquery.min.js
+│  │      qrcode.js
+│  │      qrcode.min.js
+│  │      
+│  └─upload
 │          upload.asp
 │          UpLoad_Class.asp
-│
-├─sb---------------------------------------资产目录
-│  │  baofei.asp---------------------------资产报废列表页面
-│  │  change_save2.asp---------------------资产信息修改提交页面
-│  │  conn.asp-----------------------------数据库连接语句
-│  │  cz_dyzt.asp--------------------------重置标签打印状态语句
-│  │  cz_pdzt.asp--------------------------重置资产盘点状态语句
-│  │  diao.asp-----------------------------资产调拨页面
-│  │  diao2.asp----------------------------资产调拨写入数据库代码
-│  │  dj.asp-------------------------------添加资产页面
-│  │  dj2.asp------------------------------添加资产写入数据库代码
-│  │  EXCEL_CX.asp-------------------资产查询导出EXCEL代码
-│  │  EXCEL_zj.asp---------------------资产折旧导出EXCEL代码
-│  │  guihuan.asp--------------------------资产归还页面
-│  │  guihuan2.asp-------------------------资产规划写入数据库代码
-│  │  import.asp---------------------------资产导入代码
-│  │  info.asp-----------------------------资产详细信息页面
-│  │  jiechu.asp---------------------------资产借出页面
-│  │  jiechu2.asp--------------------------资产借出写入数据库代码
-│  │  mysession.asp------------------------判断是否登录系统代码
-│  │  news_list.asp------------------------资产列表页面
-│  │  news_list_lb.asp---------------------资产标签管理列表页面
-│  │  pandian.asp--------------------------资产盘点列表页面
-│  │  pd.asp-------------------------------资产盘点页面
-│  │  pd_save.asp--------------------------资产盘点写入数据库代码
-│  │  qrcode.asp---------------------------资产单个二维码页面
-│  │  qrcode1.asp--------------------------资产标签二维码打印页面
-│  │  regist_save.asp----------------------添加资产写入数据库页面
-│  │  xg.asp-------------------------------资产修改页面
-│  │  zhejiu_list.asp----------------------资产折旧列表页面
-│  │  zhuan.asp----------------------------资产转移页面
-│  │  zhuan2.asp---------------------------资产转移写入数据库页面
-│  │
-│  ├─css
-│  │      modelcss.css
-│  │      mycss.css
-│  │      sitecss.css
-│  │
-│  └─upload--------------------------------导入文件上传目录
+│          
+├─sb
+│  │  baofei.asp
+│  │  change_save2.asp
+│  │  cz_dyzt.asp
+│  │  cz_pdzt.asp
+│  │  diao.asp
+│  │  diao2.asp
+│  │  dj.asp
+│  │  excel_cx.asp
+│  │  excel_zj.asp
+│  │  guihuan.asp
+│  │  guihuan2.asp
+│  │  import.asp
+│  │  info.asp
+│  │  jiechu.asp
+│  │  jiechu2.asp
+│  │  news_list.asp
+│  │  news_list_lb.asp
+│  │  pandian.asp
+│  │  pd.asp
+│  │  pd_save.asp
+│  │  qrcode.asp
+│  │  qrcode1.asp
+│  │  regist_save.asp
+│  │  xg.asp
+│  │  zhejiu_list.asp
+│  │  zhuan.asp
+│  │  zhuan2.asp
+│  │  
+│  └─upload
 │          资产汇总表 的备份.xlk
 │          资产汇总表.xls
-│
-└─user-------------------------------------用户、员工目录
-    │  add_user.asp------------------------添加管理员界面
-    │  add_yuangong.asp--------------------添加员工界面
-    │  admin_juese.asp---------------------角色管理界面
-    │  admin_yuangong.asp------------------管理员工界面
-    │  change_save2.asp--------------------修改员工写入数据库代码
-    │  conn.asp----------------------------数据库连接文件
-    │  del_user.asp------------------------删除用户
-    │  EXCEL_yg.asp--------------------导出员工代码
-    │  import.asp--------------------------导入员工代码
-    │  info.asp----------------------------员工信息页面
-    │  juese.asp---------------------------角色列表页面
-    │  mysession.asp-----------------------判断是否登录代码
-    │  regist_save.asp---------------------添加员工写入数据库代码
-    │  save_user.asp-----------------------修改管理员写入数据库代码
-    │  user_info.asp-----------------------管理员列表页面
-    │  user_log.asp------------------------管理员管理日志页面
-    │  xg_user.asp-------------------------修改管理员页面
-    │  xg_yuangong.asp---------------------修改员工页面
-    │
-    └─upload-------------------------------导入员工上传目录
+│          
+└─user
+    │  add_yuangong.asp
+    │  admin_yuangong.asp
+    │  change_save2.asp
+    │  excel_yg.asp
+    │  import.asp
+    │  info.asp
+    │  regist_save.asp
+    │  xg_yuangong.asp
+    │  
+    └─upload
             员工汇总表 的备份.xlk
             员工汇总表.xls
+            

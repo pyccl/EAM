@@ -27,7 +27,7 @@ Set rsrank=conn.execute(sqlrank)
 <table width="100%" border="0" cellpadding="4" cellspacing="1" bgcolor="#6298E1" style="table-layout:fixed;">
       <tr bgcolor='#EBF2F9'>
         <td width="12%" height="24" nowrap><div align="left">帐户名称：</div></td>
-        <td width="88%"><div align="left"><%=session("web_admin")%></div></td>
+        <td width="88%"><div align="left"><%=session("web_admin")%>(<%=session("uid")%>)</div></td>
       </tr>
       <tr bgcolor='#EBF2F9'>
         <td height="24" nowrap><div align="left">帐户姓名：</div></td>
@@ -47,7 +47,7 @@ Set rsrank=conn.execute(sqlrank)
       </tr>
       <tr bgcolor='#EBF2F9'>
         <td height="24" nowrap><div align="left">帐户角色：</div></td>
-        <td style="word-wrap:break-word;"><%=session("juesemc")%>（<%=session("juese")%>）</td>
+        <td style="word-wrap:break-word;"><%=session("juesemc")%>（<%=left(session("juese"),100)%>……）</td>
       </tr>
     </table>
 </body>

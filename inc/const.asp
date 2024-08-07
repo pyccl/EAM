@@ -1,3 +1,3 @@
 <%
-const version="V3.1.8-20240303"
+const version="V3.2.0-20240715"
 %>

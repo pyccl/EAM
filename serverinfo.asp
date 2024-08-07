@@ -38,44 +38,44 @@
   <tr bgcolor='#EBF2F9'>
     <td colspan="1" align="right">服务器名：</td>
     <td colspan="1" ><%=Request.ServerVariables("SERVER_NAME")%></td>
-    <td  colspan="1" align="right">服务器IP：</td>
+    <td colspan="1" align="right">服务器IP：</td>
     <td colspan="1"><%=Request.ServerVariables("LOCAL_ADDR")%></td>
   </tr>
   <tr bgcolor='#EBF2F9'>
     <td colspan="1" align="right">客户机IP：</td>
     <td colspan="1" ><span class="forumRow"><%=Request.ServerVariables("REMOTE_ADDR")%></span></td>
-    <td  colspan="1" align="right">协议名称和修订：</td>
+    <td colspan="1" align="right">协议名称和修订：</td>
     <td colspan="1"><span class="forumRow"><%=Request.ServerVariables("SERVER_PROTOCOL")%></span></td>
   </tr>
   <tr bgcolor='#EBF2F9'>
     <td colspan="1" align="right">服务器端口：</td>
     <td colspan="1" ><%=Request.ServerVariables("SERVER_PORT")%></td>
-    <td  colspan="1" align="right">服务器时间：</td>
+    <td colspan="1" align="right">服务器时间：</td>
     <td colspan="1"><%=now%></td>
   </tr>
   <tr bgcolor='#EBF2F9'>
     <td colspan="1" align="right">程序根目录路径：</td>
     <td colspan="1" ><% = server.MapPath("../")
 %></td>
-    <td  colspan="1" align="right">服务器CPU数量：</td>
+    <td colspan="1" align="right">服务器CPU数量：</td>
     <td colspan="1"><%=Request.ServerVariables("NUMBER_OF_PROCESSORS")%> 个</td>
   </tr>
   <tr bgcolor='#EBF2F9'>
     <td colspan="1" align="right">服务器解译引擎：</td>
     <td colspan="1" ><%=ScriptEngine & "/"& ScriptEngineMajorVersion &"."&ScriptEngineMinorVersion&"."& ScriptEngineBuildVersion %></td>
-    <td  colspan="1" align="right">服务器操作系统：</td>
+    <td colspan="1" align="right">服务器操作系统：</td>
     <td colspan="1"><%=Request.ServerVariables("OS")%></td>
   </tr>
   <tr bgcolor='#EBF2F9'>
     <td height="24" align="right" class="forumRowHighlight">IIS版本：</td>
     <td class="forumRow"><%=Request.ServerVariables("SERVER_SOFTWARE")%></td>
-    <td  colspan="1" align="right">脚本超时时间：</td>
+    <td colspan="1" align="right">脚本超时时间：</td>
     <td colspan="1"><%=Server.ScriptTimeout%></td>
   </tr>
   <tr bgcolor='#EBF2F9'>
     <td height="24" align="right" class="forumRowHighlight"><pre>Session超时时间：</pre></td>
     <td class="forumRow"><%=Session.Timeout%>分钟<%= Request.ServerVariables("QUERY_STRING") %></td>
-    <td  colspan="1" align="right"><pre>当前页面的SessionID是：</pre></td>
+    <td colspan="1" align="right"><pre>当前页面的SessionID是：</pre></td>
     <td colspan="1"><%=Session.SessionID%></td>
   </tr>
   <%If ObjTest("Scripting.FileSystemObject") Then
@@ -85,20 +85,20 @@
     <td height="24" colspan="4" class="td_title" >■ 服务器磁盘信息</td>
   </tr>
   <tr height="20" align=center  bgcolor='#EBF2F9'>
-    <td >盘符和磁盘类型与状态</td>
-    <td  >文件系统</td>
-    <td  >可用空间</td>
-    <td >总空间</td>
+    <td>盘符和磁盘类型与状态</td>
+    <td>文件系统</td>
+    <td>可用空间</td>
+    <td>总空间</td>
   </tr>
   <%
-' 测试磁盘信息的想法来自"COCOON ASP 探针"
+' 测试磁盘信息的想法来自"COCOON ASP 探针" '
 Set drvObj = fsoobj.Drives
 For Each d in drvObj
 %>
   <tr height="18" align=center  bgcolor='#EBF2F9'>
-    <td  align="right"><%=cdrivetype(d.DriveType) & " " & d.DriveLetter%>: <%=cIsReady(d.isReady)%></td>
+    <td align="right"><%=cdrivetype(d.DriveType) & " " & d.DriveLetter%>: <%=cIsReady(d.isReady)%></td>
     <%
-If d.DriveLetter = "A" Then '为防止影响服务器，不检查软驱
+If d.DriveLetter = "A" Then '为防止影响服务器，不检查软驱'
 Else
 %>
     <td ><%=d.FileSystem%></td>
@@ -155,7 +155,7 @@ End If
   </tr>
   <tr height="20" align=center  bgcolor='#EBF2F9'>
     <td colspan="4" ><%
-'因为只进行50万次计算，所以去掉了是否检测的选项而直接检测
+'因为只进行50万次计算，所以去掉了是否检测的选项而直接检测'
 Response.Write "整数运算测试，正在进行50万次加法运算==>"
 Dim t1, t2, lsabc, thetime, thetime2
 t1 = Timer

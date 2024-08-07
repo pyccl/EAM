@@ -10,12 +10,10 @@
 else
 
 Dim ZC_DATABASE_PATH
-'数据库路径
-ZC_DATABASE_PATH="../db/dnsb.mdb"
 
+ZC_DATABASE_PATH="../db/dnsb.mdb"	'数据库路径'
 
 data_array= Split(ZC_DATABASE_PATH,"/")
-
 
 Dim action
 action=trim(request("action"))
@@ -24,19 +22,19 @@ Dim dbpath,bkfolder,bkdbname,fso,fso1
 	Select Case action
 	Case ""
 		Call chushihua()
-	Case "CompressData" '压缩数据
+	Case "CompressData" '压缩数据'
 		Dim tmprs
 		dim allarticle
 		dim Maxid
 		dim topic,username,dateandtime,body
 		call CompressData()
-	case "BackupData" '备份数据
+	case "BackupData" '备份数据'
 		if request("act")="Backup" Then
 			call updata()
 		else
 			call BackupData()
 		end If
-	case "RestoreData" '还原数据
+	case "RestoreData" '还原数据'
 		dim backpath
 		if request("act")="Restore" Then
 			Dbpath=request.form("Dbpath")
@@ -64,7 +62,7 @@ Dim dbpath,bkfolder,bkdbname,fso,fso1
 		else
 			call RestoreData()
 		end If
-	Case "SpaceSize" '系统空间占用
+	Case "SpaceSize" '系统空间占用'
 		call SpaceSize()
 	Case "deletebackup"
 		Dim dbname
@@ -83,10 +81,6 @@ Dim dbpath,bkfolder,bkdbname,fso,fso1
 		End If
 	Case Else
 	End Select
-
-%>
-</div>
-<%
 response.write"</body></html>"
 
 Sub chushihua()
@@ -101,27 +95,27 @@ Sub chushihua()
           <form id="edit">
             <tr height="25" align="center" class="classtd">
               <td><a href="?action=SpaceSize"><strong>[数据库占用空间]</strong></a></td>
-				<% if Instr(session("juese"),"|601,")<>0 or ID=1 then %>
+              <% if Instr(session("juese"),"|601,")<>0 or ID=1 then %>
               <td><a href="?action=CompressData"><strong>[压缩数据库]</strong></a></td>
-				<% end if
+              <% end if
 				if Instr(session("juese"),"|602,")<>0 or ID=1 then %>
               <td><a href="?action=BackupData"><strong>[备份数据库]</strong></a></td>
-				<% end if
+              <% end if
 				if Instr(session("juese"),"|603,")<>0 or ID=1 then %>
               <td><a href="?action=RestoreData"><strong>[还原数据库]</strong></a></td>
-				<% end if 
+              <% end if 
 				if Instr(session("juese"),"|604,")<>0 or ID=1 then %>
-			  <td><a href="datainit.asp"><strong><font color="red">[数据库初始化]</font></strong></a></td>
-				<% end if %>
+              <td><a href="datainit.asp"><strong><font color="red">[数据库初始化]</font></strong></a></td>
+              <% end if %>
             </tr>
           </form>
         </table></td>
     </tr>
   </table>
 </div>
-<%end sub%>
-<%
-'====================系统空间占用=======================
+<%end sub
+
+'====================系统空间占用======================='
 Sub SpaceSize()
 On Error Resume Next
 %>
@@ -135,26 +129,26 @@ On Error Resume Next
           <tr height="25" align="center" class="classtd">
             <td width="50%"><strong>数据库路径：</strong><%=ZC_DATABASE_PATH%></td>
             <td width="50%"><b>数据库大小：
-                <%showSpaceinfo("../"&data_array(1)&"")%>
+              <%showSpaceinfo("../"&data_array(1)&"")%>
               </b></td>
           </tr>
           <tr height="25" align="center" class="classtd">
             <td><strong>默认备份数据库路径：</strong>/admin/databackup</td>
             <td><b>备份数据库大小：
-                <%showSpaceinfo("databackup")%>
+              <%showSpaceinfo("databackup")%>
               </b></td>
           </tr>
           <tr height="25" align="center" class="classtd">
             <td><strong>系统路径：</strong><%=server.MapPath("/")%></td>
             <td><b>系统共计大小：
-                <%showSpaceinfo("/")%>
+              <%showSpaceinfo("/")%>
               </b></td>
           </tr>
         </form>
         <tr height="25" align="center" class="classtd">
           <td colspan="2"><input name="reset" type="reset" onClick="javascript:history.back(-1);" class="button"  value=" 返回 " /></td>
         </tr>
-    </table></td>
+      </table></td>
   </tr>
 </table>
 <%
@@ -201,7 +195,8 @@ Sub RestoreData()
           </tr>
           <tr height="25" class="classtd" align="center">
             <td colspan="2"><input type="submit" value="开始还原" class="button">
-            &nbsp; <input name="reset2" type="reset" onClick="javascript:history.back(-1);" class="button"  value=" 取消 " /></td>
+              &nbsp;
+              <input name="reset2" type="reset" onClick="javascript:history.back(-1);" class="button"  value=" 取消 " /></td>
           </tr>
         </form>
       </table></td>
@@ -254,7 +249,7 @@ Sub updata()
 	End If
 	Set fso = nothing
 End Sub
-'------------------检查某一目录是否存在-------------------
+'==================检查某一目录是否存在=================='
 Function CheckDir(FolderPath)
 	folderpath=Server.MapPath(".")&"\"&folderpath
 	Set fso1 = CreateObject("Scripting.FileSystemObject")
@@ -267,7 +262,7 @@ Function CheckDir(FolderPath)
 	End If
 	Set fso1 = nothing
 End Function
-'-------------根据指定名称生成目录-----------------------
+'==================根据指定名称生成目录=================='
 Function MakeNewsDir(foldername)
 	dim f
 	Set fso1 = CreateObject("Scripting.FileSystemObject")
@@ -303,7 +298,8 @@ Sub BackupData()
           </tr>
           <tr height="25" class="classtd">
             <td align="center" colspan="2"><input type="submit" value="开始备份" class="button">
-            &nbsp;<input name="reset3" type="reset" onClick="javascript:history.back(-1);" class="button"  value=" 取消 " /></td>
+              &nbsp;
+              <input name="reset3" type="reset" onClick="javascript:history.back(-1);" class="button"  value=" 取消 " /></td>
           </tr>
         </form>
       </table></td>
@@ -327,7 +323,7 @@ Sub CompressData()
           </tr>
           <tr height="25" class="classtd">
             <td align="center" colspan="2"><input type="submit" value="开始压缩" class="button">
-            &nbsp;<a href="data.asp"><font color="red">返回</font></a></td>
+              &nbsp;<a href="data.asp"><font color="red">返回</font></a></td>
           </tr>
         </form>
       </table></td>
@@ -380,7 +376,7 @@ End If
 
 End Function
 
-'////////////////////end////////////////////////
+'=====================END=========================
 
 response.write "</body></html>"
 end if

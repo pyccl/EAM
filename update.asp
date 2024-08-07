@@ -47,6 +47,16 @@
         <td align="center" valign="middle" class="td1"><font color="Green">更新</font></td>
         <td class="td1">将账户页面、盘点页面中的状态显示调整为图标显示。</td>
       </tr>
+      <tr>
+        <td align="center" class="td1">2024-7-10</td>
+        <td align="center" valign="middle" class="td1"><font color="Red">修复</font></td>
+        <td class="td1">修复重置盘点状态后显示404的BUG。</td>
+      </tr>
+      <tr>
+        <td align="center" class="td1">2024-7-15</td>
+        <td align="center" valign="middle" class="td1"><font color="Blue">新增</font></td>
+        <td class="td1">新增小工具项目，暂只有万年历、计算器两项。</td>
+      </tr>
 </table>
 
 </body>
